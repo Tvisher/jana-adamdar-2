@@ -12,35 +12,30 @@ window.addEventListener('load', (e) => {
 });
 
 
+const selectetTagInSmear = document.querySelector('.selectet-tag');
+const smearImg = document.querySelector('.smear-img');
+const marqueeWrapper = document.querySelector('.marquee__wrapper');
 
-// // Инит и опции библиотеки анимаций
-// AOS.init({
-//     // Global settings:
-//     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-//     startEvent: 'load', // name of the event dispatched on the document, that AOS should initialize on
-//     initClassName: 'aos-init', // class applied after initialization
-//     animatedClassName: 'aos-animate', // class applied on animation
-//     useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-//     disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-//     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-//     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-//     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-//     offset: 25, // offset (in px) from the original trigger point
-//     delay: 100, // values from 0 to 3000, with step 50ms
-//     duration: 1200, // values from 0 to 3000, with step 50ms
-//     easing: 'ease', // default easing for AOS animations
-//     once: false, // whether animation should happen only once - while scrolling down
-//     mirror: false, // whether elements should animate out while scrolling past them
-//     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-// });
-
-//логика работы меню бургер
+//Отработка кликов по документу
 document.body.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('[data-burger-menu]')) {
         target.closest('[data-burger-menu]').classList.toggle('active');
         document.querySelector('[data-header-menu]').classList.toggle('active');
         document.body.classList.toggle('hidden');
+    }
+
+    if (target.closest('[data-tag]')) {
+        marqueeWrapper.classList.add('not-click');
+        const selectedTag = target.closest('[data-tag]');
+        const selectedTagId = selectedTag.dataset.tag;
+        console.log(selectedTagId);
+
+        selectetTagInSmear.innerHTML = selectedTag.innerText;
+        smearImg.src = smearImg.src;
+        setTimeout(() => {
+            marqueeWrapper.classList.remove('not-click');
+        }, 2000);
     }
 });
 
@@ -52,6 +47,22 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
 });
 
 
+// Функция для работы фикс меню
+(function () {
+    const flyingHeader = document.querySelector('.flying-header');
+    const checkScroll = () => {
+        const windowScroll = window.scrollY;
+        if (windowScroll > 400) {
+            flyingHeader.classList.add('fixed');
+        } else {
+            flyingHeader.classList.remove('fixed');
+        }
+    }
+    checkScroll();
+    window.addEventListener('scroll', checkScroll);
+})()
+
+// бегущая строка
 $('#marquee').marquee({
     startVisible: true,
     duration: 50000,

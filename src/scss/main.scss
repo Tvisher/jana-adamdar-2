@@ -30,12 +30,12 @@ html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
   color: $mainFontColor;
-  height: 100%;
+  // height: 100%;
 }
 section {
   width: 100vw;
-  overflow-x: hidden;
-  overflow-y: auto;
+  // overflow-x: hidden;
+  // overflow-y: auto;
 }
 
 body {
@@ -52,11 +52,24 @@ body {
   background-color: #fff;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
 
-  &.hidden {
-    overflow: hidden;
-    touch-action: none;
-    -ms-touch-action: none;
+.flying-header {
+  transform: translateY(-100%);
+  &.fixed {
+    transform: translateY(0);
+  }
+  transition: transform 0.35s ease-in-out;
+  padding: 13px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #462683;
+  z-index: 10;
+  .header-logo {
+    height: 50px;
+    width: 50px;
   }
 }
 
@@ -201,6 +214,28 @@ li {
   letter-spacing: 0.07em;
   text-transform: uppercase;
   text-decoration: none;
+  position: relative;
+  &::before {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out,
+      visibility 0.25s ease-in-out;
+  }
+  &:hover {
+    &::before {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 .lang-item {
@@ -344,22 +379,31 @@ li {
 }
 
 .smear-block {
-  margin-top: -50px;
-  height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "DrukCyr";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 100%;
+  height: 0;
+  padding-top: 40%;
+  position: relative;
   color: #ffffff;
-  background-image: url("../img/smear.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  position: relative;
+  .smear-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .selectet-tag {
+    text-align: center;
+    font-family: "DrukCyr";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }
 
 .second-screen__descr {
@@ -382,9 +426,14 @@ li {
 }
 
 .marquee__wrapper {
+  overflow: hidden;
+  width: 100vw;
   margin-bottom: 95px;
   height: 62px;
   background: #fab748;
+  &.not-click {
+    pointer-events: none;
+  }
 }
 
 #marquee {
@@ -395,6 +444,7 @@ li {
   background: #fab748;
 }
 .marquee__el {
+  cursor: pointer;
   &:hover {
     color: #fff;
   }
@@ -420,15 +470,32 @@ li {
 }
 
 .hello-section {
+  position: relative;
+  .flying-el {
+    z-index: -1;
+    position: absolute;
+    &[data-el="1"] {
+      right: 45px;
+      top: 0;
+    }
+    &[data-el="2"] {
+      left: 0;
+      top: 55%;
+    }
+    &[data-el="3"] {
+      right: 0;
+      top: 69.5%;
+    }
+  }
   .orange-title {
-    margin-bottom: 80px;
+    margin-bottom: 97px;
   }
   .video-block__wrapper {
     margin-bottom: 60px;
     height: 0;
     width: 100%;
     position: relative;
-    padding-top: 56.4%;
+    padding-top: 52.4%;
   }
   .video-block {
     position: absolute;
@@ -499,10 +566,20 @@ li {
   justify-content: center;
   width: 100%;
   margin-bottom: 140px;
+  .ornament-btn {
+    width: 360px;
+    height: 360px;
+  }
 }
 
 .bot-section {
+  position: relative;
   padding-bottom: 44px;
+  .flying-el[data-el="5"] {
+    position: absolute;
+    right: 0;
+    top: -100px;
+  }
   .orange-title {
     margin-bottom: 30px;
   }
@@ -536,9 +613,24 @@ li {
     }
   }
 }
-
+.hidden-container {
+  overflow: hidden;
+  width: 100vw;
+}
 .faq-section {
   position: relative;
+  .flying-el {
+    &[data-el="6"] {
+      position: absolute;
+      right: 0;
+      top: 130px;
+    }
+    &[data-el="7"] {
+      position: absolute;
+      left: 0;
+      top: 47%;
+    }
+  }
   &::before {
     margin-bottom: -1px;
     height: 125px;
@@ -548,15 +640,7 @@ li {
     background-color: #462683;
     clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
   }
-  &::after {
-    margin-top: -1px;
-    height: 125px;
-    display: block;
-    content: "";
-    width: 100%;
-    background-color: #462683;
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-  }
+
   .faq-section__content {
     background-color: #462683;
     padding-top: 112px;
@@ -564,12 +648,18 @@ li {
     color: #fff;
   }
   .orange-title {
-    margin-bottom: 80px;
+    margin-bottom: 95px;
   }
+}
+
+.faq__list {
+  max-width: 960px;
+  margin: auto !important;
 }
 
 .faq__item {
   .item__body {
+    max-width: 750px;
     display: none;
     padding-bottom: 20px;
     font-family: "Circe";
@@ -641,6 +731,105 @@ li {
           transform: translateY(-50%) rotate(90deg);
         }
       }
+    }
+  }
+}
+
+.footer {
+  padding: 60px 0;
+  position: relative;
+
+  .footer__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  &::before {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -1px;
+    height: 125px;
+    content: "";
+    width: 100%;
+    background-color: #462683;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  .footer__logo {
+    display: block;
+    width: 250px;
+    height: 250px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  .footer__data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .social {
+    text-decoration: none;
+    width: 80px;
+    height: 80px;
+    display: block;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .footer__socials {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+  }
+  .footer__contacts {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .contacts__block {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-family: "Circe";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 100%;
+      color: #462683;
+    }
+    .ico {
+      width: 40px;
+      height: 40px;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .footer__links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    a {
+      font-family: "Circe";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #462683;
     }
   }
 }
