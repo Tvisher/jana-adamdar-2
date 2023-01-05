@@ -26,16 +26,20 @@ document.body.addEventListener('click', (e) => {
     }
 
     if (target.closest('[data-tag]')) {
+
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
         const selectedTagId = selectedTag.dataset.tag;
-        console.log(selectedTagId);
-
+        document.querySelectorAll('.marquee__el.active')?.forEach(tag => tag.classList.remove('active'));
+        const selectedTags = document.querySelectorAll(`[data-tag = '${selectedTagId}']`);
+        selectedTags.forEach(tag => {
+            tag.classList.add('active');
+        });
         selectetTagInSmear.innerHTML = selectedTag.innerText;
         smearImg.src = smearImg.src;
         setTimeout(() => {
             marqueeWrapper.classList.remove('not-click');
-        }, 2000);
+        }, 800);
     }
 });
 

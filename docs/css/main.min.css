@@ -143,6 +143,7 @@ body {
 }
 
 .flying-header {
+  border-bottom: 1px solid #fab748;
   transform: translateY(-100%);
   transition: transform 0.35s ease-in-out;
   padding: 13px 0;
@@ -427,6 +428,7 @@ button {
 }
 
 .ornament-btn {
+  transition: transform 0.3s ease-in-out;
   margin-left: auto;
   margin-top: 30px;
   width: 280px;
@@ -439,6 +441,10 @@ button {
   text-transform: uppercase;
   color: #fab748;
   position: relative;
+}
+
+.ornament-btn:hover {
+  transform: scale(1.1);
 }
 
 .ornament-btn:before {
@@ -586,6 +592,10 @@ button {
 }
 
 .marquee__el:hover {
+  color: #fff;
+}
+
+.marquee__el.active {
   color: #fff;
 }
 
@@ -805,6 +815,35 @@ button {
   margin: auto !important;
 }
 
+.faq__item {
+  position: relative;
+}
+
+.faq__item::after,
+.faq__item::before {
+  width: 0%;
+  height: 2px;
+  content: "";
+  background-color: #fab748;
+  position: absolute;
+  left: 0;
+  transition: width 0.35s ease-in-out;
+  z-index: 2;
+}
+
+.faq__item::before {
+  top: 0px;
+}
+
+.faq__item::after {
+  bottom: -2px;
+}
+
+.faq__item:hover::after,
+.faq__item:hover::before {
+  width: 100%;
+}
+
 .faq__item .item__body {
   max-width: 750px;
   display: none;
@@ -849,12 +888,12 @@ button {
   height: 30px;
 }
 
-.faq__item .faq__item-wrap {
+.faq__item-wrap {
   position: relative;
 }
 
-.faq__item .faq__item-wrap::after,
-.faq__item .faq__item-wrap::before {
+.faq__item-wrap::after,
+.faq__item-wrap::before {
   width: 100%;
   height: 2px;
   content: "";
@@ -864,26 +903,26 @@ button {
   transition: background-color 0.25s ease-in-out;
 }
 
-.faq__item .faq__item-wrap::before {
-  top: 0;
+.faq__item-wrap::before {
+  top: 0px;
 }
 
-.faq__item .faq__item-wrap::after {
+.faq__item-wrap::after {
   bottom: -2px;
   z-index: 2;
 }
 
-.faq__item .faq__item-wrap.open::after,
-.faq__item .faq__item-wrap.open::before {
+.faq__item-wrap.open::after,
+.faq__item-wrap.open::before {
   background-color: #fab748;
 }
 
-.faq__item .faq__item-wrap.open .item__head::after,
-.faq__item .faq__item-wrap.open .item__head::before {
+.faq__item-wrap.open .item__head::after,
+.faq__item-wrap.open .item__head::before {
   background-color: #fab748;
 }
 
-.faq__item .faq__item-wrap.open .item__head::after {
+.faq__item-wrap.open .item__head::after {
   transform: translateY(-50%) rotate(90deg);
 }
 

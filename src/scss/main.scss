@@ -30,12 +30,9 @@ html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
   color: $mainFontColor;
-  // height: 100%;
 }
 section {
   width: 100vw;
-  // overflow-x: hidden;
-  // overflow-y: auto;
 }
 
 body {
@@ -55,6 +52,7 @@ body {
 }
 
 .flying-header {
+  border-bottom: 1px solid #fab748;
   transform: translateY(-100%);
   &.fixed {
     transform: translateY(0);
@@ -109,7 +107,6 @@ li {
   padding: 0 20px;
 
   @media screen and (max-width: $smDesktopWidth) {
-    // max-width: $tableWidth;
   }
 
   @media screen and (max-width: $tableWidth) {
@@ -308,6 +305,10 @@ li {
   }
 }
 .ornament-btn {
+  &:hover {
+    transform: scale(1.1);
+  }
+  transition: transform 0.3s ease-in-out;
   margin-left: auto;
   margin-top: 30px;
   width: 280px;
@@ -446,6 +447,9 @@ li {
 .marquee__el {
   cursor: pointer;
   &:hover {
+    color: #fff;
+  }
+  &.active {
     color: #fff;
   }
   transition: color 0.25s ease-in-out;
@@ -658,6 +662,31 @@ li {
 }
 
 .faq__item {
+  position: relative;
+  &::after,
+  &::before {
+    width: 0%;
+    height: 2px;
+    content: "";
+    background-color: #fab748;
+    position: absolute;
+    left: 0;
+    transition: width 0.35s ease-in-out;
+    z-index: 2;
+  }
+  &::before {
+    top: 0px;
+  }
+  &::after {
+    bottom: -2px;
+  }
+  &:hover {
+    &::after,
+    &::before {
+      width: 100%;
+    }
+  }
+
   .item__body {
     max-width: 750px;
     display: none;
@@ -698,38 +727,38 @@ li {
       height: 30px;
     }
   }
-  .faq__item-wrap {
-    position: relative;
+}
+.faq__item-wrap {
+  position: relative;
+  &::after,
+  &::before {
+    width: 100%;
+    height: 2px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    left: 0;
+    transition: background-color 0.25s ease-in-out;
+  }
+  &::before {
+    top: 0px;
+  }
+  &::after {
+    bottom: -2px;
+    z-index: 2;
+  }
+  &.open {
     &::after,
     &::before {
-      width: 100%;
-      height: 2px;
-      content: "";
-      background-color: rgba(255, 255, 255, 0.3);
-      position: absolute;
-      left: 0;
-      transition: background-color 0.25s ease-in-out;
+      background-color: #fab748;
     }
-    &::before {
-      top: 0;
-    }
-    &::after {
-      bottom: -2px;
-      z-index: 2;
-    }
-    &.open {
+    .item__head {
       &::after,
       &::before {
         background-color: #fab748;
       }
-      .item__head {
-        &::after,
-        &::before {
-          background-color: #fab748;
-        }
-        &::after {
-          transform: translateY(-50%) rotate(90deg);
-        }
+      &::after {
+        transform: translateY(-50%) rotate(90deg);
       }
     }
   }
