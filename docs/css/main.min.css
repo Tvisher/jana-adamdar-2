@@ -180,7 +180,7 @@ body {
   min-height: 100%;
   font-family: "Circe";
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -363,7 +363,6 @@ button {
 .header__link {
   color: #fff;
   text-transform: uppercase;
-  font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.07em;
@@ -580,7 +579,6 @@ button {
 .second-screen__descr {
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 32px;
   line-height: 130%;
   text-align: center;
@@ -698,7 +696,6 @@ button {
 .hello-section .video-block__descr {
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 140%;
   color: #000000;
@@ -736,7 +733,6 @@ button {
 }
 
 .hello-section__content .content__text-block p {
-  font-weight: 400;
   font-size: 20px;
   line-height: 140%;
   color: #000000;
@@ -780,7 +776,6 @@ button {
 .bot-section .bot-section__descr {
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 32px;
   line-height: 130%;
   color: #462683;
@@ -797,7 +792,6 @@ button {
   padding-top: 160px;
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 140%;
   color: #000000;
@@ -891,7 +885,6 @@ button {
   padding-bottom: 20px;
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 140%;
 }
@@ -901,7 +894,6 @@ button {
   padding: 20px 0;
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 32px;
   line-height: 130%;
   position: relative;
@@ -1046,7 +1038,6 @@ button {
   text-decoration: none;
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 24px;
   line-height: 100%;
   color: #462683;
@@ -1071,7 +1062,6 @@ button {
 .footer .footer__links a {
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 100%;
   color: #462683;
@@ -1187,7 +1177,6 @@ button {
 }
 
 .initiator .initiator__descr {
-  font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #000000;
@@ -1245,7 +1234,6 @@ button {
 .manifest li {
   font-family: "Circe";
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 140%;
   margin-bottom: 13px;
@@ -1313,6 +1301,179 @@ button {
 .modal-romb[data-modal-romb="9"] {
   bottom: 0%;
   right: 0;
+}
+
+.modal[data-modal=registration-modal] .modal-title {
+  font-family: "DrukCyr";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #462683;
+  margin-bottom: 50px;
+}
+
+.modal[data-modal=registration-modal] .modal__container {
+  max-width: 672px;
+}
+
+.modal[data-modal=registration-modal] .registration__row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.modal[data-modal=registration-modal] .row__name {
+  padding-top: 7px;
+  flex-shrink: 0;
+  width: 142px;
+  font-family: "Circe";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 140%;
+  color: #462683;
+}
+
+.modal[data-modal=registration-modal] .row__data {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.modal[data-modal=registration-modal] .data__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  overflow: hidden;
+}
+
+.modal[data-modal=registration-modal] .data__label input {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.modal[data-modal=registration-modal] .data__label input:checked + span {
+  background-color: #fab748;
+  border-color: #fab748;
+}
+
+.modal[data-modal=registration-modal] .data__label span {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  padding: 7px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modal[data-modal=registration-modal] .more-btn {
+  cursor: pointer;
+  text-decoration-line: underline;
+  color: #462683;
+}
+
+.modal[data-modal=registration-modal] .registration__row.inputs {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.modal[data-modal=registration-modal] .registration__row.inputs .error {
+  opacity: 0;
+  color: #cd0000;
+}
+
+.modal[data-modal=registration-modal] .registration__row.inputs.has-error .error {
+  opacity: 1;
+}
+
+.modal[data-modal=registration-modal] .registration__row.inputs.has-error .field__input {
+  border-color: #cd0000;
+}
+
+.modal[data-modal=registration-modal] .location-row {
+  margin-bottom: 30px;
+  padding-top: 25px;
+}
+
+.modal[data-modal=registration-modal] .location-row .location__data {
+  max-width: 350px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.modal[data-modal=registration-modal] .location-row .map-link {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.modal[data-modal=registration-modal] .location-row .map-link img,
+.modal[data-modal=registration-modal] .location-row .map-link svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.modal[data-modal=registration-modal] .location-row .row__links {
+  display: flex;
+  gap: 12px;
+}
+
+.modal[data-modal=registration-modal] .row__field {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.modal[data-modal=registration-modal] .field__input {
+  margin: 5px 0;
+  display: block;
+  width: 350px;
+  padding: 16px 10px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.modal[data-modal=registration-modal] .field__input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.modal[data-modal=registration-modal] .namplate,
+.modal[data-modal=registration-modal] .error {
+  font-family: "Circe";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.modal[data-modal=registration-modal] .namplate {
+  opacity: 0.5;
+}
+
+.modal[data-modal=registration-modal] .styles-btn {
+  max-width: 350px;
+  width: 100%;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {

@@ -55,7 +55,7 @@
                     </a>
                     <nav class="header__nav">
                         <a href="#" class="header__link">Обращение </a>
-                        <a href="#" class="header__link">Манифест </a>
+                        <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
                         <a href="#" class="header__link">Путь лидера </a>
                         <a href="#" class="header__link">Будь в Движении</a>
                         <a href="#" class="header__link">Встретиться</a>
@@ -447,7 +447,118 @@
         </div>
     </div>
 
-    <div class="modal show" data-modal="manifest-modal">
+    <div class="modal show" data-modal="registration-modal">
+        <div class="modal__content" data-modal-content>
+            <div class="modal-close-btn" onclick="this.closest('.show').classList.remove('show')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 11.9992L24 1.4999L22.5 0L12 10.4993L1.5 0L7.15257e-07 1.4999L10.5 11.9992L0 22.4985L1.5 23.9984L12 13.4991L22.5 23.9984L24 22.4985L13.5 11.9992Z" fill="black" />
+                </svg>
+            </div>
+            <div class="modal-title">Запишись на встречу</div>
+            <div class="modal__container">
+                <div class="registration__row">
+                    <div class="row__name">Выбери город</div>
+                    <div class="row__data">
+                        <label class="data__label">
+                            <input type="radio" name="city">
+                            <span>Астана</span>
+                        </label>
+                        <label class="data__label">
+                            <input type="radio" name="city">
+                            <span>Петропавловск</span>
+                        </label>
+                        <label class="data__label">
+                            <input type="radio" name="city">
+                            <span>Усть-Каменогорск</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="registration__row">
+                    <div class="row__name">Выбери дату</div>
+                    <div class="row__data">
+                        <label class="data__label">
+                            <input type="radio" name="date">
+                            <span>21 марта в 16:30</span>
+                        </label>
+                        <label class="data__label">
+                            <input type="radio" name="date">
+                            <span>18 сентября в 16:30</span>
+                        </label>
+                        <label class="data__label">
+                            <input type="radio" name="date">
+                            <span>24 мая в 16:30</span>
+                        </label>
+
+                        <label class="data__label">
+                            <input type="radio" name="date">
+                            <span>2 марта в 16:30</span>
+                        </label>
+                        <label class="data__label">
+                            <input type="radio" name="date">
+                            <span>5 мая в 16:30</span>
+                        </label>
+
+                        <label class="data__label">
+                            <div class="more-btn">показать ещё</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="registration__row inputs">
+                    <div class="row__name">Как тебя зовут?</div>
+                    <div class="row__field">
+                        <input class="field__input" type="text" placeholder="например Азербайжан Мамбетов">
+                    </div>
+                </div>
+
+                <div class="registration__row inputs has-error">
+                    <div class="row__name">Телефон</div>
+                    <div class="row__field">
+                        <span class="error">не хватает номера телефона</span>
+                        <input class="field__input" type="tel" placeholder="+7 (___) __-__-__">
+                        <span class="namplate">на этот номер мы отправим смс с кодом подтверждения</span>
+                    </div>
+                </div>
+
+                <div class="registration__row location-row">
+                    <div class="row__name">Мы встретимся</div>
+                    <div class="row__data">
+                        <div class="location__data">18 сентября в 16:30, по адресу: Астана, ул. Азербайжана Мамбетова, д. 4, офис 374</div>
+                    </div>
+                    <div class="row__links">
+                        <a class="map-link" href="#" title="yandex-map">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 1.01758C11.7155 1.01758 5 7.73308 5 16.0176C5 20.1583 6.67775 23.9076 9.39125 26.6218C12.1055 29.3376 18.5 33.2676 18.875 37.3926C18.9312 38.0111 19.379 38.5176 20 38.5176C20.621 38.5176 21.0688 38.0111 21.125 37.3926C21.5 33.2676 27.8945 29.3376 30.6087 26.6218C33.3222 23.9076 35 20.1583 35 16.0176C35 7.73308 28.2845 1.01758 20 1.01758Z" fill="#FF4433" />
+                                <path d="M20.002 22.7529C22.9015 22.7529 25.2519 20.4024 25.2519 17.5029C25.2519 14.6034 22.9015 12.2529 20.002 12.2529C17.1025 12.2529 14.752 14.6034 14.752 17.5029C14.752 20.4024 17.1025 22.7529 20.002 22.7529Z" fill="white" />
+                            </svg>
+                        </a>
+                        <a class="map-link" href="#" title="2gis">
+                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_273_20906" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="40">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4411 0.0175619L12.152 0L29.954 0.00687361C30.2239 0.00962361 30.3917 0.0129994 30.5596 0.0175619C31.4422 0.0409994 32.3324 0.0926878 33.2052 0.24775C34.0913 0.404875 34.9153 0.661938 35.7197 1.06719C36.5103 1.46481 37.2346 1.98444 37.8621 2.60544C38.4895 3.22494 39.0151 3.94031 39.4174 4.7225C39.8279 5.5185 40.0873 6.33313 40.2463 7.20906C40.4031 8.07187 40.4554 8.95194 40.4791 9.82444C40.4902 10.2248 40.4951 10.6252 40.4972 11.0263L40.4996 11.7394L40.5 27.5409C40.5 28.0164 40.5 28.4919 40.4972 28.9682C40.4951 29.3686 40.4902 29.769 40.4791 30.1694C40.4554 31.0412 40.4031 31.9219 40.2463 32.7841C40.0873 33.66 39.8279 34.4753 39.4174 35.2713C39.0151 36.0528 38.4895 36.7682 37.8621 37.3884C37.2346 38.0087 36.5103 38.529 35.7197 38.9266C34.9153 39.3319 34.0913 39.5889 33.2052 39.7461C32.3324 39.9011 31.4422 39.9528 30.5596 39.9762L27.9008 39.9969L11.0462 39.9869C10.7763 39.9842 10.6087 39.9808 10.4411 39.9762C9.5585 39.9528 8.66825 39.9011 7.79544 39.7461C6.90944 39.5889 6.08544 39.3319 5.28094 38.9266C4.48969 38.529 3.76606 38.0087 3.13863 37.3884C2.51125 36.7682 1.98556 36.0528 1.58263 35.2713C1.17275 34.4753 0.913374 33.66 0.753749 32.7841C0.596874 31.9219 0.545312 31.0412 0.521625 30.1694C0.510437 29.769 0.505562 29.3686 0.5035 28.9682L0.500439 28.2542L0.5 12.4529C0.5 11.9774 0.5 11.5012 0.5035 11.0263C0.505562 10.6252 0.510437 10.2248 0.521625 9.82444C0.545312 8.95194 0.596874 8.07187 0.753749 7.20906C0.913374 6.33313 1.17275 5.5185 1.58263 4.7225C1.98556 3.94031 2.51125 3.22494 3.13863 2.60544C3.76606 1.98444 4.48969 1.46481 5.28094 1.06719C6.08544 0.661938 6.90944 0.404875 7.79544 0.24775C8.66825 0.0926878 9.5585 0.0409994 10.4411 0.0175619Z" fill="white" />
+                                </mask>
+                                <g mask="url(#mask0_273_20906)">
+                                    <path d="M40.5 -0.00195312H0.5V39.998H40.5V-0.00195312Z" fill="#19AA1E" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 -0.00195312H40.5V13.123L0.5 6.87305V-0.00195312Z" fill="#FFB919" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 35.623L40.5 29.373V39.998H0.5V35.623Z" fill="#82D714" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 6.08301L14.4623 8.26457C16.2004 7.16438 18.2681 6.56119 20.5 6.56119C23.5912 6.56119 26.3677 7.71838 28.3893 9.75038C28.6444 10.0068 28.8851 10.2749 29.1107 10.5534L40.5 12.3329V13.9144L30.2672 12.3156C31.0274 13.7744 31.4375 15.3999 31.4375 17.0587C31.4375 19.2017 30.9581 21.3384 29.9673 23.4836L29.9371 23.5486L29.5163 24.4504H28.5212C26.4664 24.4504 25.1033 25.0651 24.2122 26.1544C23.5124 27.0097 23.1078 28.1627 22.9717 29.4208L22.9676 29.4601L22.9476 29.6611L22.9392 29.7485L22.923 29.9196C22.8709 30.4813 22.8361 30.9576 22.8184 31.3457L40.5 28.5829V30.1644L0.5 36.4144V34.8329L18.2016 32.0671L18.1938 31.712L18.1914 31.6119L18.1899 31.5606L18.1872 31.4813C18.1712 31.0508 18.1318 30.4989 18.0686 29.8301L18.0565 29.7033L18.0349 29.4837C17.9078 28.219 17.5093 27.0514 16.8114 26.1834C15.9296 25.0866 14.5791 24.4629 12.5408 24.4506L12.4788 24.4504H11.4837L11.0629 23.5486C10.0516 21.3816 9.5625 19.2234 9.5625 17.0587C9.5625 14.3365 10.6669 11.7042 12.6107 9.75038C12.6668 9.69401 12.7235 9.63826 12.7808 9.58326L0.5 7.66438V6.08301Z" fill="white" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5 8.12305C26.0844 8.12305 29.875 12.4214 29.875 17.058C29.875 18.9195 29.4689 20.8565 28.5212 22.8872C23.0262 22.8872 21.6698 26.8225 21.4134 29.2985L21.3969 29.4635C21.3101 30.3472 21.2598 31.0562 21.2461 31.5908L19.7577 31.8233L19.7573 31.7752C19.7517 31.2149 19.6987 30.4289 19.5985 29.4172L19.5941 29.373C19.3572 26.9024 18.0293 22.8872 12.4788 22.8872C11.5311 20.8565 11.125 18.9195 11.125 17.058C11.125 12.4214 14.9156 8.12305 20.5 8.12305Z" fill="#0073FA" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="registration__row ">
+                    <div class="row__name"></div>
+                    <div class="row__field">
+                        <button class="styles-btn">Всё правильно!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="manifest-modal">
         <div class="modal__content" data-modal-content>
             <div class="modal-romb" data-modal-romb="1">
                 <img src="img/modal-romb-1.svg" alt="">
