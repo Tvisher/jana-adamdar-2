@@ -1265,10 +1265,14 @@ h6 {
     width: 100%;
   }
 
+  .field__input-wrapper {
+    max-width: 350px;
+  }
+
   .field__input {
     margin: 5px 0;
     display: block;
-    width: 350px;
+    width: 100%;
     padding: 16px 10px;
     border: 1px solid #000000;
     border-radius: 4px;
