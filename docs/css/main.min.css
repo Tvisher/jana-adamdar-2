@@ -1028,6 +1028,7 @@ button {
   position: fixed;
   background: linear-gradient(135deg, rgba(255, 78, 255, 0.6) 0%, rgba(0, 155, 246, 0.6) 100%);
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   left: 0;
   top: 0;
   width: 100%;
