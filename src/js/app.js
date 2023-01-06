@@ -7,9 +7,9 @@ import IMask from 'imask';
 // Проверка поддержки webP
 baseFunction.testWebP();
 
-window.addEventListener('load', (e) => {
-    document.body.style.opacity = 1;
-});
+// window.addEventListener('load', (e) => {
+//     document.body.style.opacity = 1;
+// });
 
 
 const selectetTagInSmear = document.querySelector('.selectet-tag');
@@ -19,12 +19,12 @@ const marqueeWrapper = document.querySelector('.marquee__wrapper');
 //Отработка кликов по документу
 document.body.addEventListener('click', (e) => {
     const target = e.target;
+    // Открытие мобильного меню
     if (target.closest('[data-burger-menu]')) {
         target.closest('[data-burger-menu]').classList.toggle('active');
         document.querySelector('[data-header-menu]').classList.toggle('active');
-        document.body.classList.toggle('hidden');
     }
-
+    // Логика тегов 
     if (target.closest('[data-tag]')) {
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
@@ -40,18 +40,17 @@ document.body.addEventListener('click', (e) => {
             marqueeWrapper.classList.remove('not-click');
         }, 800);
     }
-
+    // Откытие модальных окон
     if (target.closest('[data-modal-open]')) {
         e.preventDefault();
         const modalType = target.closest('[data-modal-open]').dataset.modalOpen;
         const selectedModal = document.querySelector(`[data-modal="${modalType}"]`);
         selectedModal.classList.add('show');
     }
-
+    // Закрытие модальных окон
     if (target.closest('[data-modal].show') && !target.closest('[data-modal-content]')) {
         target.closest('[data-modal].show').classList.remove('show');
     }
-
 });
 
 // Маска на номера телефона
@@ -75,7 +74,7 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
     }
     checkScroll();
     window.addEventListener('scroll', checkScroll);
-})()
+})();
 
 // бегущая строка
 $('#marquee').marquee({

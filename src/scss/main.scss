@@ -1,60 +1,7 @@
-// тк мы к ним обращаемся везде ниже
 @import "fonts.scss";
 @import "utils/reset";
 @import "utils/vars";
 @import "vendors/vendors";
-
-// /* Стрелки */
-// ::-webkit-scrollbar-button:vertical:start:decrement {
-//   background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-//   background-color: #f6f8f4;
-//   display: none;
-// }
-
-// ::-webkit-scrollbar-button:vertical:end:increment {
-//   background: linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-//   background-color: #f6f8f4;
-//   display: none;
-// }
-
-// ::-webkit-scrollbar-button:horizontal:start:decrement {
-//   background: linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-//   background-color: #f6f8f4;
-//   display: none;
-// }
-
-// ::-webkit-scrollbar-button:horizontal:end:increment {
-//   background: linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-//     linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-//   background-color: #f6f8f4;
-//   display: none;
-// }
-
-// /* полоса прокрутки (скроллбар) */
-// ::-webkit-scrollbar {
-//   width: 8px; /* ширина для вертикального скролла */
-//   height: 8px; /* высота для горизонтального скролла */
-//   background-color: rgb(255, 255, 255);
-//   border-radius: 2px;
-// }
-
-// /* ползунок скроллбара */
-// ::-webkit-scrollbar-thumb {
-//   // background-color: #17171a;
-//   background-color: #fab748;
-//   border-radius: 10px;
-// }
-
-// ::-webkit-scrollbar-thumb:hover {
-//   background-color: #253861;
-// }
 
 .unselectable {
   -webkit-touch-callout: none;
@@ -99,8 +46,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .flying-header {
