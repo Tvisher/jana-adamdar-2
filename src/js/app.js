@@ -26,7 +26,6 @@ document.body.addEventListener('click', (e) => {
     }
 
     if (target.closest('[data-tag]')) {
-
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
         const selectedTagId = selectedTag.dataset.tag;
@@ -41,6 +40,18 @@ document.body.addEventListener('click', (e) => {
             marqueeWrapper.classList.remove('not-click');
         }, 800);
     }
+
+    if (target.closest('[data-modal-open]')) {
+        e.preventDefault();
+        const modalType = target.closest('[data-modal-open]').dataset.modalOpen;
+        const selectedModal = document.querySelector(`[data-modal="${modalType}"]`);
+        selectedModal.classList.add('show');
+    }
+
+    if (target.closest('[data-modal].show') && !target.closest('[data-modal-content]')) {
+        target.closest('[data-modal].show').classList.remove('show');
+    }
+
 });
 
 // Маска на номера телефона
