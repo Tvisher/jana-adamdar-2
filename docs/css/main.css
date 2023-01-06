@@ -96,54 +96,6 @@ select {
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 
-/* Стрелки */
-
-::-webkit-scrollbar-button:vertical:start:decrement {
-  background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
-  display: none;
-}
-
-::-webkit-scrollbar-button:vertical:end:increment {
-  background: linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
-  display: none;
-}
-
-::-webkit-scrollbar-button:horizontal:start:decrement {
-  background: linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
-  display: none;
-}
-
-::-webkit-scrollbar-button:horizontal:end:increment {
-  background: linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
-  display: none;
-}
-
-/* полоса прокрутки (скроллбар) */
-
-::-webkit-scrollbar {
-  width: 8px;
-  /* ширина для вертикального скролла */
-  height: 8px;
-  /* высота для горизонтального скролла */
-  background-color: rgb(255, 255, 255);
-  border-radius: 2px;
-}
-
-/* ползунок скроллбара */
-
-::-webkit-scrollbar-thumb {
-  background-color: #fab748;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #253861;
-}
-
 .unselectable {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -597,7 +549,6 @@ button {
 .marquee__wrapper {
   overflow: hidden;
   width: 100vw;
-  margin-bottom: 95px;
   height: 62px;
   background: #fab748;
 }
@@ -648,6 +599,7 @@ button {
 }
 
 .hello-section {
+  padding-top: 95px;
   position: relative;
 }
 
@@ -1474,6 +1426,29 @@ button {
   max-width: 350px;
   width: 100%;
   justify-content: center;
+}
+
+.modal {
+  /* полоса прокрутки (скроллбар) */
+  /* ползунок скроллбара */
+}
+
+.modal::-webkit-scrollbar {
+  width: 8px;
+  /* ширина для вертикального скролла */
+  height: 8px;
+  /* высота для горизонтального скролла */
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #fab748;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background-color: #462683;
 }
 
 @media screen and (max-width: 768px) {

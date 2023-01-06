@@ -32,12 +32,12 @@
                         <img src="img/logo-white.svg" alt="za">
                     </a>
                     <nav class="header__nav">
-                        <a href="#" class="header__link">Обращение </a>
+                        <a href="#hello-section" class="header__link">Обращение </a>
                         <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
                         <a href="#" class="header__link">Путь лидера </a>
                         <a href="#" class="header__link">Будь в Движении</a>
-                        <a href="#" class="header__link">Встретиться</a>
-                        <a href="#" class="header__link">FAQ </a>
+                        <a href="#" class="header__link" data-modal-open="registration-modal">Встретиться</a>
+                        <a href="#faq-section" class="header__link">FAQ </a>
                     </nav>
                     <div class="header__langs">
                         <a href="#" class="lang-item">ru</a>
@@ -54,12 +54,12 @@
                         <img src="img/logo-easy.svg" alt="za">
                     </a>
                     <nav class="header__nav">
-                        <a href="#" class="header__link">Обращение </a>
+                        <a href="#hello-section" class="header__link">Обращение </a>
                         <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
                         <a href="#" class="header__link">Путь лидера </a>
                         <a href="#" class="header__link">Будь в Движении</a>
-                        <a href="#" class="header__link">Встретиться</a>
-                        <a href="#" class="header__link">FAQ </a>
+                        <a href="#" class="header__link" data-modal-open="registration-modal">Встретиться</a>
+                        <a href="#faq-section" class="header__link">FAQ </a>
                     </nav>
                     <div class="header__langs">
                         <a href="#" class="lang-item">ru</a>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </section>
-            <section class="hello-section">
+            <section class="hello-section" id="hello-section">
                 <div class="flying-el" data-el="1">
                     <img src="img/flying-el-1.svg" alt="">
                 </div>
@@ -185,7 +185,7 @@
                     </div>
                 </div>
             </section>
-            <section class="faq-section">
+            <section class="faq-section" id="faq-section">
                 <div class="flying-el" data-el="6">
                     <img src="img/flying-el-6.svg" alt="">
                 </div>
@@ -447,7 +447,7 @@
         </div>
     </div>
 
-    <div class="modal show" data-modal="registration-modal">
+    <div class="modal" data-modal="registration-modal">
         <div class="modal__content" data-modal-content>
             <div class="modal-close-btn" onclick="this.closest('.show').classList.remove('show')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -455,7 +455,7 @@
                 </svg>
             </div>
             <div class="modal-title">Запишись на встречу</div>
-            <div class="modal__container">
+            <form class="modal__container">
                 <div class="registration__row">
                     <div class="row__name">Выбери город</div>
                     <div class="row__data">
@@ -551,10 +551,10 @@
                 <div class="registration__row ">
                     <div class="row__name"></div>
                     <div class="row__field">
-                        <button class="styles-btn">Всё правильно!</button>
+                        <button type="submit" class="styles-btn">Всё правильно!</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
