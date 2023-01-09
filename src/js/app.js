@@ -34,6 +34,14 @@ document.body.addEventListener('click', (e) => {
         selectedTags.forEach(tag => {
             tag.classList.add('active');
         });
+
+        document.querySelectorAll('.tag-descr.active')?.forEach(tag => tag.classList.remove('active'));
+        const selectedDescr = document.querySelectorAll(`[data-descr = '${selectedTagId}']`);
+        selectedDescr.forEach(tag => {
+            tag.classList.add('active');
+        });
+
+
         selectetTagInSmear.innerHTML = selectedTag.innerText;
         smearImg.src = smearImg.src;
         setTimeout(() => {
@@ -93,3 +101,8 @@ $("[data-toggle-elem]").click(function () {
 });
 
 
+
+
+
+
+$('[data-paroller-type]').paroller(); 

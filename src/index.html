@@ -16,16 +16,16 @@
     <div class="hidden-container">
         <div class="paralax-wrapper">
             <div class="paralax-bg">
-                <img class="stars" src="@img/stars_1.png" alt="">
-                <img class="stars" src="@img/stars_2.png" alt="">
-                <img class="stars" src="@img/stars_3.png" alt="">
-                <img class="cloud" src="@img/clouds-1.png" alt="">
-                <img class="cloud second" src="@img/clouds-2.png" alt="">
-                <img class="rhombus-large" src="@img/rhombus-large.png" alt="">
-                <img class="rhombus-smalls" src="@img/rhombus-smalls.png" alt="">
+                <img data-paroller-factor="0.1" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem stars" src="@img/stars_1.png" alt="">
+                <img data-paroller-factor="0.15" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem stars" src="@img/stars_2.png" alt="">
+                <img data-paroller-factor="0.2" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem stars" src="@img/stars_3.png" alt="">
+                <img data-paroller-factor="0.1" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem cloud" src="@img/clouds-1.png" alt="">
+                <img data-paroller-factor="0.3" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem cloud second" src="@img/clouds-2.png" alt="">
+                <img data-paroller-factor="0.6" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem rhombus-large" src="@img/rhombus-large.png" alt="">
+                <img data-paroller-factor="0.8" data-paroller-type="foreground" data-paroller-direction="vertical" class="paralax-elem rhombus-smalls" src="@img/rhombus-smalls.png" alt="">
             </div>
         </div>
-        <header class="header">
+        <header class="header" data-paroller-factor="0.3" data-paroller-type="foreground" data-paroller-direction="vertical">
             <div class="container">
                 <div class="header__wrapper">
                     <a href="#" class="header-logo">
@@ -71,7 +71,7 @@
         <main>
             <section class="main-screen">
                 <div class="container">
-                    <div class="title-wrapper">
+                    <div class="title-wrapper" data-paroller-factor="0.5" data-paroller-type="foreground" data-paroller-direction="vertical">
                         <h1 class="main-title"> ДЕЛО<br>ВО МНЕ</h1>
                         <button class="ornament-btn">узнать</button>
                     </div>
@@ -84,7 +84,17 @@
                         <img class="smear-img" src="@img/smear.gif" alt="">
                         <div class="selectet-tag">НОВЫЙ КАЗАХСТАН</div>
                     </div>
-                    <div class="second-screen__descr">это государство, в центре интересов которого стоит реализация человеком всей полноты своих возможностей за счет создания 19 миллионов центров принятия решений вместо одного</div>
+                    <div class="second-screen__descr">
+                        <span class="tag-descr" data-descr="1">это то, что создают, а не то, под что подстраиваются и ждут.</span>
+                        <span class="tag-descr" data-descr="2">результат осознанного принятия ответственности за все, что происходит в нашей стране, каждым ее жителем.</span>
+                        <span class="tag-descr" data-descr="3">наше персональное место сбора лидеров НОВОГО КАЗАХСТАНА.</span>
+                        <span class="tag-descr" data-descr="4"> это прежде всего власть над собой, над своими чувствами и привычками. Имеющий власть над собой имеет власть над теми, у кого нет власти над собой.</span>
+                        <span class="tag-descr active" data-descr="5">это государство, в центре интересов которого стоит реализация человеком всей полноты своих возможностей за счет создания 19 миллионов центров принятия решений вместо одного</span>
+                        <span class="tag-descr" data-descr="6">это то, что делаю только я и без меня в мире этого не будет. </span>
+                        <span class="tag-descr" data-descr="7">это тот, кто дает другим гарантии, сам для себя, не имея никаких гарантий.</span>
+                        <span class="tag-descr" data-descr="8">люди, которые ни в чем не нуждаются, потому что сделали всё себе сами.</span>
+                        <span class="tag-descr" data-descr="9">иначе думающие люди, готовые прийти на смену старой элите – элите должностей, родственных связей, денег и контроля.</span>
+                    </div>
                 </div>
                 <div class="marquee__wrapper unselectable">
                     <div id="marquee">
@@ -732,6 +742,8 @@
     </div>
 </body>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/paroller.js/dist/jquery.paroller.min.js"></script>
 <script src="./js/app.min.js"></script>
 
 </html>
