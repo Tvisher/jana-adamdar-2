@@ -7,10 +7,7 @@ import IMask from 'imask';
 // Проверка поддержки webP
 baseFunction.testWebP();
 
-// window.addEventListener('load', (e) => {
-//     document.body.style.opacity = 1;
-// });
-
+$('[data-paroller-type]').paroller();
 
 const selectetTagInSmear = document.querySelector('.selectet-tag');
 const smearImg = document.querySelector('.smear-img');
@@ -100,9 +97,3 @@ $("[data-toggle-elem]").click(function () {
     $(this).parent().find("[data-toggle-content]").slideToggle("slow");
 });
 
-
-
-
-
-
-$('[data-paroller-type]').paroller(); 
