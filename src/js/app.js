@@ -7,6 +7,13 @@ import IMask from 'imask';
 // Проверка поддержки webP
 baseFunction.testWebP();
 
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.body.classList.add('load');
+    }, 230);
+})
+
 $('[data-paroller-type]').paroller();
 
 const selectetTagInSmear = document.querySelector('.selectet-tag');
@@ -71,7 +78,7 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
     const flyingHeader = document.querySelector('.flying-header');
     const checkScroll = () => {
         const windowScroll = window.scrollY;
-        if (windowScroll > 400) {
+        if (windowScroll > 500) {
             flyingHeader.classList.add('fixed');
         } else {
             flyingHeader.classList.remove('fixed');
@@ -96,4 +103,3 @@ $("[data-toggle-elem]").click(function () {
     $(this).parent().toggleClass('open')
     $(this).parent().find("[data-toggle-content]").slideToggle("slow");
 });
-
