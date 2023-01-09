@@ -58,14 +58,18 @@ body {
     content: "";
     background-color: #fff;
     z-index: 999;
-    transition: visibility 0.2s ease-in-out;
+    transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
   }
   &.load:before {
+    opacity: 0;
     visibility: hidden;
   }
 }
 
 .flying-header {
+  .header__wrapper {
+    padding-top: 0;
+  }
   border-bottom: 1px solid #fab748;
   transform: translateY(-100%);
   &.fixed {
@@ -174,11 +178,8 @@ h6 {
   }
 }
 
-body {
-  padding-top: 50px;
-}
-
 .header__wrapper {
+  padding-top: 50px;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -300,7 +301,7 @@ body {
 
   .rhombus-smalls {
     position: absolute;
-    right: 15%;
+    right: 22%;
     top: 23%;
     z-index: 2;
   }
@@ -308,6 +309,8 @@ body {
 
 .header {
   margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
 }
 
 .main-screen {
@@ -641,7 +644,7 @@ body {
   }
 }
 .hidden-container {
-  overflow: hidden;
+  // overflow: hidden;
   width: 100vw;
 }
 .faq-section {

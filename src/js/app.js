@@ -9,12 +9,16 @@ baseFunction.testWebP();
 
 
 window.addEventListener('load', () => {
+    // $("[data-paroller-factor]").paroller({
+    //     type: 'foreground',     // background, foreground
+    //     direction: 'horizontal', // vertical, horizontal
+    // });
     setTimeout(() => {
         document.body.classList.add('load');
     }, 230);
 })
 
-$('[data-paroller-type]').paroller();
+
 
 const selectetTagInSmear = document.querySelector('.selectet-tag');
 const smearImg = document.querySelector('.smear-img');
@@ -77,8 +81,9 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
 (function () {
     const flyingHeader = document.querySelector('.flying-header');
     const checkScroll = () => {
+
         const windowScroll = window.scrollY;
-        if (windowScroll > 500) {
+        if (windowScroll > 400) {
             flyingHeader.classList.add('fixed');
         } else {
             flyingHeader.classList.remove('fixed');
@@ -103,3 +108,18 @@ $("[data-toggle-elem]").click(function () {
     $(this).parent().toggleClass('open')
     $(this).parent().find("[data-toggle-content]").slideToggle("slow");
 });
+
+
+
+
+
+function createParallax(elements) {
+    elements.forEach(element => {
+        let elementDistance = window.pageYOffset;
+        let date = element.getAttribute('data-paroller-factor');
+        let parallax = elementDistance * date;
+        element.style.transform = `translateY(${-parallax}px)`;
+        element.style.willChange = `transform`;
+    });
+}
+window.addEventListener('scroll', () => createParallax(document.querySelectorAll('[data-paroller-factor]')));
