@@ -113,6 +113,18 @@ $("[data-toggle-elem]").click(function () {
 
 
 
+// function createParallax(elements) {
+//     elements.forEach(element => {
+//         let elementDistance = window.pageYOffset;
+//         let date = element.getAttribute('data-paroller-factor');
+//         let parallax = elementDistance * date;
+//         element.style.transform = `translateY(${-parallax}px)`;
+//         element.style.willChange = `transform`;
+//     });
+// }
+// window.addEventListener('scroll', () => createParallax(document.querySelectorAll('[data-paroller-factor]')));
+
+
 function createParallax(elements) {
     elements.forEach(element => {
         let elementDistance = window.pageYOffset;
@@ -120,6 +132,13 @@ function createParallax(elements) {
         let parallax = elementDistance * date;
         element.style.transform = `translateY(${-parallax}px)`;
         element.style.willChange = `transform`;
+        element.style.opacity = 1;
     });
 }
-window.addEventListener('scroll', () => createParallax(document.querySelectorAll('[data-paroller-factor]')));
+
+function updateParallax() {
+    createParallax(document.querySelectorAll('[data-paroller-factor]'));
+    window.requestAnimationFrame(updateParallax);
+}
+
+updateParallax();
