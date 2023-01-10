@@ -115,7 +115,6 @@ $("[data-toggle-elem]").click(function () {
 });
 
 
-
 const waySlider = new Swiper('.way-slider', {
     speed: 1000,
     slidesPerView: 'auto',
