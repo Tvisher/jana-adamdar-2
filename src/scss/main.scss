@@ -140,6 +140,7 @@ h6 {
 @import "./common.scss";
 
 .styles-btn {
+  background-color: #fff;
   padding: 21px 30px;
   border-radius: 4px;
   display: flex;
@@ -256,20 +257,11 @@ h6 {
     margin-top: -3px;
   }
 }
-[data-paralax] {
+[data-rellax-speed] {
   will-change: transform;
 }
 
 .paralax-bg {
-  &:before {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 200px;
-    content: "";
-    background-color: #fff;
-  }
   position: absolute;
   left: 0;
   top: 0;
@@ -304,6 +296,12 @@ h6 {
     right: 22%;
     top: 23%;
     z-index: 2;
+    @media (max-width: 1450px) {
+      right: 12%;
+    }
+    @media (max-width: 1360px) {
+      right: 5%;
+    }
   }
 }
 
@@ -446,7 +444,24 @@ h6 {
     display: none;
     &.active {
       display: block;
+      animation: tagAnimation 1s ease-in-out forwards;
     }
+  }
+}
+
+@keyframes tagAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -510,7 +525,7 @@ h6 {
     position: absolute;
     &[data-el="1"] {
       right: 45px;
-      top: 0;
+      top: 100px;
     }
     &[data-el="2"] {
       left: 0;
@@ -597,7 +612,6 @@ h6 {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 140px;
   .ornament-btn {
     width: 360px;
     height: 360px;
@@ -605,6 +619,7 @@ h6 {
 }
 
 .bot-section {
+  padding-top: 140px;
   position: relative;
   padding-bottom: 44px;
   .flying-el[data-el="5"] {
@@ -615,14 +630,15 @@ h6 {
   .orange-title {
     margin-bottom: 30px;
   }
-  .bot-section__descr {
-    font-family: "Circe";
-    font-style: normal;
-    font-size: 32px;
-    line-height: 130%;
-    color: #462683;
-    text-align: center;
-  }
+}
+
+.bot-section__descr {
+  font-family: "Circe";
+  font-style: normal;
+  font-size: 32px;
+  line-height: 130%;
+  color: #462683;
+  text-align: center;
 }
 
 .bot-section__content {
@@ -644,7 +660,7 @@ h6 {
   }
 }
 .hidden-container {
-  // overflow: hidden;
+  overflow: hidden;
   width: 100vw;
 }
 .faq-section {
@@ -1308,6 +1324,109 @@ h6 {
   }
 }
 
+.way {
+  padding-top: 140px;
+  .orange-title {
+    margin-bottom: 30px;
+  }
+}
+
+.way-slider {
+  margin-top: 50px;
+  transform: rotate(-7deg);
+  cursor: ew-resize;
+}
+
+.way-slide {
+  max-width: 660px;
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  transition: transform 0.25s ease-in-out;
+  transform: rotate(7deg) !important;
+  &.btns-slide {
+    padding-left: 40px;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-end;
+    transform: rotate(7deg) translateY(110%) !important;
+    position: relative;
+    &:before {
+      position: absolute;
+      width: 561px;
+      height: 702px;
+      content: "";
+      left: 130px;
+      bottom: -170px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("@img/way-slider-bg.svg");
+    }
+  }
+  .styles-btn {
+    max-width: 340px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.way-slide__step {
+  transform: translateY(130%);
+  width: 160px;
+  height: 160px;
+  background-image: url("@img/step-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DrukCyr";
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #462683;
+}
+
+.way-slide__image {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+}
+
+.way-slide__title {
+  font-family: "DrukCyr";
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #462683;
+  margin-bottom: 20px;
+}
+
+.way-slide__descr {
+  font-family: "Circe";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  color: #000000;
+}
+
+.data-link {
+  color: #462683;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media (max-width: 1180px) {
   .header__nav {
     gap: 10px;
@@ -1344,7 +1463,7 @@ h6 {
     bottom: 140px;
   }
   .paralax-bg .cloud {
-    bottom: 76px;
+    bottom: 0px;
   }
 
   .paralax-bg {
@@ -1400,7 +1519,6 @@ h6 {
 
   .hello-section .flying-el[data-el="1"] {
     right: -180px;
-    top: 100px;
   }
 
   .hello-section .flying-el[data-el="2"] {

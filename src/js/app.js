@@ -3,16 +3,16 @@ import * as baseFunction from './modules/functions.js';
 import './vendors/vendors.js';
 // import AOS from 'aos';
 import IMask from 'imask';
+import Rellax from 'rellax';
 
 // Проверка поддержки webP
 baseFunction.testWebP();
 
 
 window.addEventListener('load', () => {
-    // $("[data-paroller-factor]").paroller({
-    //     type: 'foreground',     // background, foreground
-    //     direction: 'horizontal', // vertical, horizontal
-    // });
+    var rellax = new Rellax('[data-rellax-speed]', {
+        breakpoints: [576, 768, 1180],
+    });
     setTimeout(() => {
         document.body.classList.add('load');
     }, 230);
@@ -31,6 +31,7 @@ document.body.addEventListener('click', (e) => {
     if (target.closest('[data-burger-menu]')) {
         target.closest('[data-burger-menu]').classList.toggle('active');
         document.querySelector('[data-header-menu]').classList.toggle('active');
+        return;
     }
     // Логика тегов 
     if (target.closest('[data-tag]')) {
@@ -55,6 +56,7 @@ document.body.addEventListener('click', (e) => {
         setTimeout(() => {
             marqueeWrapper.classList.remove('not-click');
         }, 800);
+        return;
     }
     // Откытие модальных окон
     if (target.closest('[data-modal-open]')) {
@@ -62,10 +64,12 @@ document.body.addEventListener('click', (e) => {
         const modalType = target.closest('[data-modal-open]').dataset.modalOpen;
         const selectedModal = document.querySelector(`[data-modal="${modalType}"]`);
         selectedModal.classList.add('show');
+        return;
     }
     // Закрытие модальных окон
     if (target.closest('[data-modal].show') && !target.closest('[data-modal-content]')) {
         target.closest('[data-modal].show').classList.remove('show');
+        return;
     }
 });
 
@@ -93,6 +97,7 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
     window.addEventListener('scroll', checkScroll);
 })();
 
+
 // бегущая строка
 $('#marquee').marquee({
     startVisible: true,
@@ -111,34 +116,9 @@ $("[data-toggle-elem]").click(function () {
 
 
 
-
-
-// function createParallax(elements) {
-//     elements.forEach(element => {
-//         let elementDistance = window.pageYOffset;
-//         let date = element.getAttribute('data-paroller-factor');
-//         let parallax = elementDistance * date;
-//         element.style.transform = `translateY(${-parallax}px)`;
-//         element.style.willChange = `transform`;
-//     });
-// }
-// window.addEventListener('scroll', () => createParallax(document.querySelectorAll('[data-paroller-factor]')));
-
-
-function createParallax(elements) {
-    elements.forEach(element => {
-        let elementDistance = window.pageYOffset;
-        let date = element.getAttribute('data-paroller-factor');
-        let parallax = elementDistance * date;
-        element.style.transform = `translateY(${-parallax}px)`;
-        element.style.willChange = `transform`;
-        element.style.opacity = 1;
-    });
-}
-
-function updateParallax() {
-    createParallax(document.querySelectorAll('[data-paroller-factor]'));
-    window.requestAnimationFrame(updateParallax);
-}
-
-updateParallax();
+const waySlider = new Swiper('.way-slider', {
+    speed: 1000,
+    slidesPerView: 'auto',
+    mousewheel: true,
+    spaceBetween: 40,
+});
