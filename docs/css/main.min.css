@@ -2247,6 +2247,15 @@ button {
 }
 
 @media (max-width: 576px) {
+  .second-screen__descr .tag-descr {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .second-screen__descr {
+    min-height: 150px;
+  }
+
   .mobile-menu__nav {
     margin: auto;
     margin-top: 0;
