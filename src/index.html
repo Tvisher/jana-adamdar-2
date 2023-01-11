@@ -305,7 +305,11 @@
 
                         </div>
                     </div>
-
+                    <div class="btns-block">
+                        <a href="#" class="styles-btn" data-modal-open="manifest-modal">Прочесть Манифест</a>
+                        <a href="#" class="styles-btn">Записаться на встречу</a>
+                        <a href="#" class="styles-btn">Приступить к конкурсу</a>
+                    </div>
                 </div>
             </section>
             <section class="bot-section" id="bot-section">
@@ -320,7 +324,10 @@
                     </div>
                     <div class="bot-section__content">
                         <div class="bot-section__img">
-                            <img src="@img/bot-img.png" alt="">
+                            <picture>
+                                <source srcset="@img/bot-img-mob.png" media="(max-width: 991px)" />
+                                <img src="@img/bot-img.png" alt="">
+                            </picture>
                         </div>
                         <div class="bot-section__text">
                             <span>Для удобства конкурс проводится в телеграм-боте. Он введёт тебя в курс дела, объяснит задание и даже вдохновит успешными примерами.</span>
