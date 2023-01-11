@@ -49,7 +49,7 @@
                 <nav class="header__nav">
                     <a href="#hello-section" class="header__link">Обращение </a>
                     <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
-                    <a href="#way" class="header__link">Путь лидера </a>
+                    <a href="#way-section" class="header__link">Путь лидера </a>
                     <a href="#bot-section" class="header__link">Будь в Движении</a>
                     <a href="#" class="header__link" data-modal-open="registration-modal">Встретиться</a>
                     <a href="#faq-section" class="header__link">FAQ </a>
@@ -77,7 +77,7 @@
                     <nav class="header__nav">
                         <a href="#hello-section" class="header__link">Обращение </a>
                         <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
-                        <a href="#way" class="header__link">Путь лидера </a>
+                        <a href="#way-section" class="header__link">Путь лидера </a>
                         <a href="#bot-section" class="header__link">Будь в Движении</a>
                         <a href="#" class="header__link" data-modal-open="registration-modal">Встретиться</a>
                         <a href="#faq-section" class="header__link">FAQ </a>
@@ -208,7 +208,7 @@
                 </div>
             </section>
 
-            <section class="way" id="way">
+            <section class="way" id="way-section">
                 <div class="container small-container">
                     <h2 class="orange-title">Путь лидера</h2>
                     <div class="bot-section__descr">
@@ -219,6 +219,16 @@
                 <div class="container small-container">
 
                     <div class="way-slider swiper-slider">
+                        <div class="way-slider__btns">
+                            <div class="swiper-button-prev"><svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 1L1 8L8 15" stroke="#462683" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="swiper-button-next"><svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L1 15" stroke="#462683" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
                         <div class="swiper-wrapper">
                             <div class="swiper-slide way-slide">
                                 <div class="way-slide__step">1</div>
@@ -298,17 +308,35 @@
                             </div>
 
                             <div class="swiper-slide way-slide btns-slide">
-                                <a href="#" class="styles-btn" data-modal-open="manifest-modal">Прочесть Манифест</a>
-                                <a href="#" class="styles-btn">Записаться на встречу</a>
-                                <a href="#" class="styles-btn">Приступить к конкурсу</a>
+                                <a href="#" class="styles-btn" data-modal-open="manifest-modal">
+                                    Прочесть Манифест
+                                    <div class="styles-btn__line"></div>
+                                </a>
+                                <a href="#" class="styles-btn">
+                                    Записаться на встречу
+                                    <div class="styles-btn__line"></div>
+                                </a>
+                                <a href="#" class="styles-btn">
+                                    Приступить к конкурсу
+                                    <div class="styles-btn__line"></div>
+                                </a>
                             </div>
 
                         </div>
                     </div>
                     <div class="btns-block">
-                        <a href="#" class="styles-btn" data-modal-open="manifest-modal">Прочесть Манифест</a>
-                        <a href="#" class="styles-btn">Записаться на встречу</a>
-                        <a href="#" class="styles-btn">Приступить к конкурсу</a>
+                        <a href="#" class="styles-btn" data-modal-open="manifest-modal">
+                            Прочесть Манифест
+                            <div class="styles-btn__line"></div>
+                        </a>
+                        <a href="#" class="styles-btn">
+                            Записаться на встречу
+                            <div class="styles-btn__line"></div>
+                        </a>
+                        <a href="#" class="styles-btn">
+                            Приступить к конкурсу
+                            <div class="styles-btn__line"></div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -334,7 +362,10 @@
                             <span>В дальнейшем все наше общение будет происходить в этом мессенджере. Поэтому если ещё не установил приложение, то уже пора.</span>
                             <span>Возникнут проблемы в процессе? Не переживай и смело вызывай в боте модератора. Мы не бросим тебя в беде.</span>
                             <span>Удачи и добро пожаловать!</span>
-                            <a href="#" class="styles-btn">Запустить телеграм-бота</a>
+                            <a href="#" class="styles-btn">
+                                Запустить телеграм-бота
+                                <div class="styles-btn__line"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -710,7 +741,10 @@
                 <div class="registration__row ">
                     <div class="row__name"></div>
                     <div class="row__field">
-                        <button type="submit" class="styles-btn">Всё правильно!</button>
+                        <button type="submit" class="styles-btn">
+                            Всё правильно!
+                            <div class="styles-btn__line"></div>
+                        </button>
                     </div>
                 </div>
             </form>
