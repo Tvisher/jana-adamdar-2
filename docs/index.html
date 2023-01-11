@@ -14,11 +14,37 @@
 </head>
 
 <body>
+    <div class="mobile-menu" data-mobile-menu>
+        <div class="container">
+            <div class="mobile-menu__head">
+                <a href="#" class="header-logo">
+                    <img class="mobile-logo" src="img/mobile-logo.svg" alt="za">
+                </a>
+                <div class="mobile-menu__close" onclick="this.closest('.show').classList.remove('show')">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="mobile-menu__nav">
+                <a href="" class="mobile-menu__link">Обращение</a>
+                <a href="" class="mobile-menu__link">Манифест</a>
+                <a href="" class="mobile-menu__link">Путь лидера </a>
+                <a href="" class="mobile-menu__link">Будь в Движении</a>
+                <a href="" class="mobile-menu__link">Встретиться</a>
+                <a href="" class="mobile-menu__link">FAQ</a>
+            </nav>
+            <div class="header__langs">
+                <a href="#" class="lang-item">ru</a>
+                <a href="#" class="lang-item active">kz</a>
+            </div>
+        </div>
+    </div>
     <div class="flying-header">
         <div class="container">
             <div class="header__wrapper">
                 <a href="#" class="header-logo">
-                    <img src="img/logo-easy.svg" alt="za">
+                    <img class="desctop-logo" src="img/logo-easy.svg" alt="za">
+                    <img class="mobile-logo" src="img/mobile-logo.svg" alt="za">
                 </a>
                 <nav class="header__nav">
                     <a href="#hello-section" class="header__link">Обращение </a>
@@ -32,6 +58,11 @@
                     <a href="#" class="lang-item">ru</a>
                     <a href="#" class="lang-item active">kz</a>
                 </div>
+                <div class="mobile-burger" data-burger-menu>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
@@ -40,7 +71,8 @@
             <div class="container">
                 <div class="header__wrapper">
                     <a href="#" class="header-logo">
-                        <img src="img/logo-white.svg" alt="za">
+                        <img class="desctop-logo" src="img/logo-white.svg" alt="za">
+                        <img class="mobile-logo" src="img/mobile-logo.svg" alt="za">
                     </a>
                     <nav class="header__nav">
                         <a href="#hello-section" class="header__link">Обращение </a>
@@ -53,6 +85,11 @@
                     <div class="header__langs">
                         <a href="#" class="lang-item">ru</a>
                         <a href="#" class="lang-item active">kz</a>
+                    </div>
+                    <div class="mobile-burger" data-burger-menu>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>

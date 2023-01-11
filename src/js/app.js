@@ -29,8 +29,7 @@ document.body.addEventListener('click', (e) => {
     const target = e.target;
     // Открытие мобильного меню
     if (target.closest('[data-burger-menu]')) {
-        target.closest('[data-burger-menu]').classList.toggle('active');
-        document.querySelector('[data-header-menu]').classList.toggle('active');
+        document.querySelector('[data-mobile-menu]').classList.toggle('show');
         return;
     }
     // Логика тегов 
