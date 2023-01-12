@@ -26,12 +26,12 @@
                 </div>
             </div>
             <nav class="mobile-menu__nav">
-                <a href="" class="mobile-menu__link">Обращение</a>
-                <a href="" class="mobile-menu__link">Манифест</a>
-                <a href="" class="mobile-menu__link">Путь лидера </a>
-                <a href="" class="mobile-menu__link">Будь в Движении</a>
-                <a href="" class="mobile-menu__link">Встретиться</a>
-                <a href="" class="mobile-menu__link">FAQ</a>
+                <a href="#hello-section" class="mobile-menu__link">Обращение </a>
+                <a href="#" class="header__link" data-modal-open="manifest-modal">Манифест </a>
+                <a href="#way-section" class="mobile-menu__link">Путь лидера </a>
+                <a href="#bot-section" class="mobile-menu__link">Будь в Движении</a>
+                <a href="#" class="mobile-menu__link" data-modal-open="registration-modal">Встретиться</a>
+                <a href="#faq-section" class="mobile-menu__link">FAQ </a>
             </nav>
             <div class="header__langs">
                 <a href="#" class="lang-item">ru</a>
@@ -101,7 +101,11 @@
             <img data-rellax-speed="0" data-rellax-desktop-speed="-1" class="paralax-elem cloud" src="@img/clouds-1.png" alt="">
             <img data-rellax-speed="1" data-rellax-desktop-speed="2" class="paralax-elem cloud second" src="@img/clouds-2.png" alt="">
             <img data-rellax-speed="5" class="paralax-elem rhombus-large" src="@img/rhombus-large.png" alt="">
-            <img data-rellax-speed="6" class="paralax-elem rhombus-smalls" src="@img/rhombus-smalls.png" alt="">
+
+            <picture>
+                <source srcset="@img/rhombus-smalls-mobile.png" media="(max-width: 490px)" />
+                <img data-rellax-speed="6" class="paralax-elem rhombus-smalls" src="@img/rhombus-smalls.png" alt="">
+            </picture>
         </div>
 
         <main>

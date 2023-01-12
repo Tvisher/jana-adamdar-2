@@ -86,7 +86,7 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
     const checkScroll = () => {
 
         const windowScroll = window.scrollY;
-        if (windowScroll > 400) {
+        if (windowScroll > 350) {
             flyingHeader.classList.add('fixed');
         } else {
             flyingHeader.classList.remove('fixed');
@@ -97,10 +97,13 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
 })();
 
 
+
+
+const marqueeDuration = window.innerWidth > 480 ? 50000 : 15000;
 // бегущая строка
 $('#marquee').marquee({
     startVisible: true,
-    duration: 50000,
+    duration: marqueeDuration,
     delayBeforeStart: 0,
     direction: 'left',
     duplicated: true,
@@ -113,7 +116,7 @@ $("[data-toggle-elem]").click(function () {
     $(this).parent().find("[data-toggle-content]").slideToggle("slow");
 });
 
-
+// Слайдер секции путь лидера
 const waySlider = new Swiper('.way-slider', {
     speed: 1000,
     slidesPerView: 'auto',

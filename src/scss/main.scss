@@ -71,12 +71,17 @@ body {
   .header__wrapper {
     padding-top: 0;
   }
-  border-bottom: 1px solid #fab748;
-  transform: translateY(-100%);
   &.fixed {
-    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
   }
-  transition: transform 0.35s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-110%);
+  border-bottom: 1px solid #fab748;
+  transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out,
+    transform 0.25s ease-in-out;
   padding: 13px 0;
   position: fixed;
   left: 0;
@@ -1622,7 +1627,10 @@ h6 {
   display: none;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 993px) {
+  .modal__content {
+    padding: 50px 50px;
+  }
   .flying-header {
     padding: 20px 0;
     .header-logo {
@@ -1858,6 +1866,76 @@ h6 {
 }
 
 @media (max-width: 769px) {
+  .mobile-menu,
+  .header__wrapper {
+    padding-top: 10px;
+  }
+  .flying-header .header-logo,
+  .header-logo {
+    height: 55px;
+  }
+  .flying-header {
+    padding: 10px 0;
+  }
+  .modal[data-modal="registration-modal"] .row__data {
+    margin: auto;
+  }
+  .modal {
+    padding: 30px;
+  }
+  .modal[data-modal="registration-modal"] .modal-title {
+    margin-bottom: 20px;
+  }
+  .modal__content {
+    padding: 50px 20px;
+    padding-bottom: 30px;
+  }
+  .registration__row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .row__name {
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .modal[data-modal="registration-modal"] .namplate {
+    text-align: center;
+  }
+  .modal[data-modal="registration-modal"] .location-row {
+    justify-content: center;
+  }
+  .modal[data-modal="registration-modal"] .location-row .location__data {
+    max-width: inherit;
+    margin: auto;
+    text-align: center;
+  }
+  .modal[data-modal="registration-modal"] .location-row .row__links {
+    margin: auto;
+  }
+
+  .modal[data-modal="registration-modal"] .row__field {
+    justify-content: center;
+    .styles-btn {
+      margin: auto;
+    }
+  }
+  .modal[data-modal="registration-modal"] .row__data {
+    justify-content: center;
+  }
+
+  .modal[data-modal="registration-modal"] .field__input-wrapper {
+    max-width: 350px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .modal[data-modal="registration-modal"]
+    .registration__row.inputs.has-error
+    .error {
+    text-align: center;
+  }
   .hello-section .flying-el[data-el="2"] {
     img {
       width: 100%;
@@ -1906,7 +1984,7 @@ h6 {
     margin-bottom: 40px;
   }
   .orange-title {
-    font-size: 48px;
+    font-size: 32px;
   }
   .way-slide.btns-slide {
     display: none;
@@ -1940,9 +2018,9 @@ h6 {
     margin-bottom: 30px;
   }
 
-  .orange-title {
-    font-size: 48px;
-  }
+  // .orange-title {
+  //   font-size: 48px;
+  // }
   .ornament-btn__wrapper .ornament-btn {
     width: 300px;
     height: 300px;
@@ -2001,9 +2079,15 @@ h6 {
   .faq-section .faq-section__content {
     padding-top: 90px;
   }
+  .bot-section__descr {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 576px) {
+  .way {
+    padding-top: 40px;
+  }
   .second-screen__descr .tag-descr {
     font-size: 16px;
     line-height: 120%;
@@ -2020,14 +2104,63 @@ h6 {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='341' height='460' viewBox='0 0 341 460' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M191.369 0.356329L-81.7052 154.142L-83.0546 312.407M191.369 0.356329L-83.0546 312.407M191.369 0.356329L312.785 236.738L339.914 398.892M191.369 0.356329L339.914 398.892M-83.0546 312.407L339.914 398.892M-83.0546 312.407L56.456 534.316L339.914 398.892' stroke='%23FAB748' stroke-width='0.5'/%3e%3c/svg%3e ");
     background-position: left bottom;
   }
-}
-
-@media (max-width: 480px) {
   .orange-title {
-    font-size: 40px;
+    font-size: 7.333vw;
   }
+  .paralax-bg .rhombus-smalls {
+    width: 428px;
+    height: 346px;
+    right: 2%;
+    top: 25%;
+  }
+  .paralax-bg {
+    height: 120vw;
+    margin-bottom: 25vw;
+  }
+  .smear-block .selectet-tag {
+    font-size: 18px;
+  }
+
   .bot-section__descr {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 490px) {
+  .faq-section .faq-section__content {
+    padding-top: 50px;
+  }
+  .modal__content .modal-close-btn {
+    right: 20px;
+    top: 20px;
+  }
+  .modal[data-modal="registration-modal"] .data__label {
+    width: 100%;
+  }
+  .main-title {
+    font-size: 48px;
+  }
+  .paralax-bg .rhombus-large {
+    width: 383px;
+    height: 374px;
+    top: 110px;
+    left: -250px;
+  }
+  .main-screen .title-wrapper {
+    margin-bottom: 30vw;
+  }
+  .paralax-bg {
+    height: 130vw;
+  }
+  .paralax-bg .rhombus-smalls {
+    right: -10%;
+    top: 21%;
+  }
+  .paralax-bg .cloud.second {
+    bottom: 20px;
+  }
+  .bot-section__descr {
+    font-size: 18px;
   }
   .hello-section .video-block__descr,
   .hello-section .video-block__wrapper {
@@ -2071,8 +2204,108 @@ h6 {
       border: 1px solid #462683;
     }
   }
+  .bot-section .flying-el[data-el="5"] {
+    z-index: -1;
+    width: 168px;
+    height: 185px;
+    right: -5%;
+    top: -40px;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .faq-section .flying-el[data-el="6"] {
+    right: -40px;
+    top: 148px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .faq__item .item__head {
+    font-size: 24px;
+  }
+
+  .faq-section::before {
+    clip-path: polygon(100% 60%, 0% 100%, 100% 100%);
+  }
+  .faq-section .faq-section__content {
+    padding-bottom: 100px;
+  }
+
+  .footer::before {
+    clip-path: polygon(0 0, 100% 0, -80% 100%);
+  }
+  .footer .footer__links {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ornament-btn__wrapper .ornament-btn {
+    width: 220px;
+    height: 200px;
+    font-size: 13px;
+  }
+  .hello-section__content.second {
+    margin-bottom: 30px;
+  }
+  .hello-section__content .content__text-block p,
+  .way-slide__descr,
+  .bot-section__content .bot-section__text span {
+    font-size: 16px;
+  }
+  .modal[data-modal="registration-modal"] .modal-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 440px) {
+  .hello-section {
+    padding-top: 40px;
+  }
+  .btns-block {
+    padding-top: 20px;
+  }
+  .hello-section .flying-el[data-el="2"] {
+    width: 132px;
+    height: 133px;
+    left: 0;
+    top: 54%;
+  }
+  .second-screen__descr {
+    min-height: 100px;
+    margin-bottom: 20px;
+  }
+  .smear-block {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding-top: 50%;
+  }
+  .paralax-bg {
+    height: 140vw;
+  }
+  .modal {
+    padding: 0;
+    border-radius: 0;
+  }
+  .footer {
+    padding-bottom: 50px;
+  }
+  .faq-section .faq-section__content {
+    padding-bottom: 50px;
+  }
+  .smear-block .selectet-tag {
+    font-size: 16px;
+  }
 }
 @media (max-width: 390px) {
+  .paralax-bg {
+    height: 150vw;
+  }
+  .paralax-bg .cloud.second {
+    bottom: 0;
+  }
   .way-slide__title {
     font-size: 22px;
     line-height: 110%;
