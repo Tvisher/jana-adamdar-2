@@ -236,9 +236,35 @@ h6 {
 }
 
 .header__langs {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 3px;
+  width: 125px;
+  height: 33px;
+}
+
+.lang-item {
+  transition: font-size 0.35s ease-in-out, left 0.35s ease-in-out,
+    top 0.35s ease-in-out;
+  position: absolute;
+  left: 48px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "DrukCyr";
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  color: #fff;
+  font-size: 36px;
+  top: 0;
+  &.active {
+    top: 3px;
+    left: 0;
+    margin-top: 0;
+    font-size: 20px;
+  }
 }
 
 .header__link {
@@ -273,20 +299,6 @@ h6 {
   }
 }
 
-.lang-item {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "DrukCyr";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 100%;
-  color: #fff;
-  &.active {
-    font-size: 36px;
-    margin-top: -3px;
-  }
-}
 [data-rellax-speed] {
   will-change: transform;
 }
@@ -832,6 +844,9 @@ h6 {
       &::after {
         transform: translateY(-50%) rotate(90deg);
       }
+      &::before {
+        transform: translate(-1px, -1px) rotate(180deg);
+      }
     }
   }
 }
@@ -1061,7 +1076,8 @@ h6 {
 }
 
 [data-modal="manifest-modal"] {
-  padding: 0;
+  background: #fff;
+  padding: 0 !important;
   .modal__content {
     position: relative;
     border-radius: 0;
@@ -1338,7 +1354,7 @@ h6 {
 .modal {
   /* полоса прокрутки (скроллбар) */
   &::-webkit-scrollbar {
-    width: 8px; /* ширина для вертикального скролла */
+    width: 4px; /* ширина для вертикального скролла */
     height: 8px; /* высота для горизонтального скролла */
     background-color: rgb(255, 255, 255);
     border-radius: 2px;
@@ -1475,7 +1491,7 @@ h6 {
 
 @media (max-width: 1180px) {
   .way {
-    padding-top: 80px;
+    padding-top: 110px;
   }
   .header__nav {
     gap: 10px;
@@ -1535,7 +1551,7 @@ h6 {
   }
 
   .hello-section {
-    padding-top: 80px;
+    padding-top: 110px;
   }
 
   .hello-section .orange-title {
@@ -1600,7 +1616,7 @@ h6 {
   }
 
   .bot-section {
-    padding-top: 90px;
+    padding-top: 110px;
   }
 
   .way-slide.btns-slide:before {
@@ -1866,6 +1882,15 @@ h6 {
 }
 
 @media (max-width: 769px) {
+  .initiator {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .initiator__data {
+    padding-top: 0;
+    margin-bottom: 30px;
+  }
+
   .mobile-menu,
   .header__wrapper {
     padding-top: 10px;
@@ -1977,7 +2002,7 @@ h6 {
     margin-bottom: 30px;
   }
   .hello-section {
-    padding-top: 60px;
+    padding-top: 110px;
   }
   .hello-section .orange-title,
   .hello-section .video-block__wrapper {
@@ -2018,9 +2043,6 @@ h6 {
     margin-bottom: 30px;
   }
 
-  // .orange-title {
-  //   font-size: 48px;
-  // }
   .ornament-btn__wrapper .ornament-btn {
     width: 300px;
     height: 300px;
@@ -2028,33 +2050,6 @@ h6 {
   .hello-section__content.second {
     margin-bottom: 44px;
   }
-
-  // .paralax-bg .cloud.second,
-  // .paralax-bg .cloud {
-  //   object-fit: inherit;
-  // }
-  // .paralax-bg .cloud {
-  //   bottom: -20px;
-  // }
-  // .main-title {
-  //   font-size: 70px;
-  // }
-
-  // .paralax-bg {
-  //   height: 100vw;
-  // }
-
-  // .paralax-bg .rhombus-smalls {
-  //   width: 500px;
-  //   height: 410px;
-  //   object-fit: contain;
-  //   right: 46px;
-  // }
-
-  // .paralax-bg .rhombus-large {
-  //   top: 200px;
-  //   left: -200px;
-  // }
 
   .smear-block .selectet-tag {
     font-size: 24px;
@@ -2086,7 +2081,7 @@ h6 {
 
 @media (max-width: 576px) {
   .way {
-    padding-top: 40px;
+    padding-top: 80px;
   }
   .second-screen__descr .tag-descr {
     font-size: 16px;
@@ -2127,6 +2122,9 @@ h6 {
 }
 
 @media (max-width: 490px) {
+  .hello-section__content {
+    gap: 30px;
+  }
   .faq-section .faq-section__content {
     padding-top: 50px;
   }
@@ -2147,6 +2145,7 @@ h6 {
     left: -250px;
   }
   .main-screen .title-wrapper {
+    margin-left: 0;
     margin-bottom: 30vw;
   }
   .paralax-bg {
@@ -2261,9 +2260,9 @@ h6 {
 }
 
 @media (max-width: 440px) {
-  .hello-section {
-    padding-top: 40px;
-  }
+  // .hello-section {
+  //   padding-top: 40px;
+  // }
   .btns-block {
     padding-top: 20px;
   }
@@ -2287,7 +2286,9 @@ h6 {
   }
   .modal {
     padding: 0;
-    border-radius: 0;
+    .modal__content {
+      border-radius: 0;
+    }
   }
   .footer {
     padding-bottom: 50px;

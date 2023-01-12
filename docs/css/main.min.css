@@ -359,9 +359,34 @@ button {
 }
 
 .header__langs {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 3px;
+  width: 125px;
+  height: 33px;
+}
+
+.lang-item {
+  transition: font-size 0.35s ease-in-out, left 0.35s ease-in-out, top 0.35s ease-in-out;
+  position: absolute;
+  left: 48px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "DrukCyr";
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  color: #fff;
+  font-size: 36px;
+  top: 0;
+}
+
+.lang-item.active {
+  top: 3px;
+  left: 0;
+  margin-top: 0;
+  font-size: 20px;
 }
 
 .header__link {
@@ -393,22 +418,6 @@ button {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
-}
-
-.lang-item {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "DrukCyr";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 100%;
-  color: #fff;
-}
-
-.lang-item.active {
-  font-size: 36px;
-  margin-top: -3px;
 }
 
 [data-rellax-speed] {
@@ -1000,6 +1009,10 @@ button {
   transform: translateY(-50%) rotate(90deg);
 }
 
+.faq__item-wrap.open .item__head::before {
+  transform: translate(-1px, -1px) rotate(180deg);
+}
+
 .footer {
   padding: 60px 0;
   position: relative;
@@ -1234,7 +1247,8 @@ button {
 }
 
 [data-modal=manifest-modal] {
-  padding: 0;
+  background: #fff;
+  padding: 0 !important;
 }
 
 [data-modal=manifest-modal] .modal__content {
@@ -1527,7 +1541,7 @@ button {
 }
 
 .modal::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
   /* ширина для вертикального скролла */
   height: 8px;
   /* высота для горизонтального скролла */
@@ -1699,7 +1713,7 @@ button {
 
 @media (max-width: 1180px) {
   .way {
-    padding-top: 80px;
+    padding-top: 110px;
   }
 
   .header__nav {
@@ -1768,7 +1782,7 @@ button {
   }
 
   .hello-section {
-    padding-top: 80px;
+    padding-top: 110px;
   }
 
   .hello-section .orange-title {
@@ -1834,7 +1848,7 @@ button {
   }
 
   .bot-section {
-    padding-top: 90px;
+    padding-top: 110px;
   }
 
   .way-slide.btns-slide:before {
@@ -2112,6 +2126,16 @@ button {
 }
 
 @media (max-width: 769px) {
+  .initiator {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .initiator__data {
+    padding-top: 0;
+    margin-bottom: 30px;
+  }
+
   .mobile-menu,
   .header__wrapper {
     padding-top: 10px;
@@ -2244,7 +2268,7 @@ button {
   }
 
   .hello-section {
-    padding-top: 60px;
+    padding-top: 110px;
   }
 
   .hello-section .orange-title,
@@ -2339,7 +2363,7 @@ button {
 
 @media (max-width: 576px) {
   .way {
-    padding-top: 40px;
+    padding-top: 80px;
   }
 
   .second-screen__descr .tag-descr {
@@ -2388,6 +2412,10 @@ button {
 }
 
 @media (max-width: 490px) {
+  .hello-section__content {
+    gap: 30px;
+  }
+
   .faq-section .faq-section__content {
     padding-top: 50px;
   }
@@ -2413,6 +2441,7 @@ button {
   }
 
   .main-screen .title-wrapper {
+    margin-left: 0;
     margin-bottom: 30vw;
   }
 
@@ -2555,10 +2584,6 @@ button {
 }
 
 @media (max-width: 440px) {
-  .hello-section {
-    padding-top: 40px;
-  }
-
   .btns-block {
     padding-top: 20px;
   }
@@ -2587,6 +2612,9 @@ button {
 
   .modal {
     padding: 0;
+  }
+
+  .modal .modal__content {
     border-radius: 0;
   }
 

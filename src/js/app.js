@@ -70,6 +70,25 @@ document.body.addEventListener('click', (e) => {
         target.closest('[data-modal].show').classList.remove('show');
         return;
     }
+    if (target.closest('[data-mobile-link]')) {
+        document.querySelector('[data-mobile-menu]').classList.remove('show');
+        return;
+    }
+
+    if (target.closest('[data-lang]')) {
+        e.preventDefault();
+        const langItem = target.closest('[data-lang]');
+        if (langItem.classList.contains('active')) return;
+        const langParam = langItem.dataset.lang;
+        document.querySelectorAll(`[data-lang].active`).forEach(item => {
+            item.classList.remove('active');
+        });
+        document.querySelectorAll(`[data-lang="${langParam}"]`).forEach(item => {
+            item.classList.add('active');
+        });
+        document.body.setAttribute('data-selected-lang', langParam);
+        return;
+    }
 });
 
 // Маска на номера телефона
