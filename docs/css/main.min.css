@@ -1785,6 +1785,15 @@ button {
     padding-top: 110px;
   }
 
+  .second-screen {
+    margin-bottom: -60px;
+  }
+
+  .hello-section,
+  .way {
+    margin-bottom: -20px;
+  }
+
   .hello-section .orange-title {
     margin-bottom: 60px;
   }
