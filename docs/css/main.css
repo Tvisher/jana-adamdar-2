@@ -3563,7 +3563,7 @@ button {
   }
 
   .paralax-bg .rhombus-smalls {
-    right: -10%;
+    right: -15%;
     top: 21%;
   }
 
@@ -3689,6 +3689,10 @@ button {
   .modal[data-modal=registration-modal] .modal-title {
     font-size: 24px;
   }
+
+  .main-screen__wrapper {
+    padding-right: 40px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -3768,8 +3772,15 @@ button {
 }
 
 @media (max-width: 390px) {
+  .paralax-bg .rhombus-smalls {
+    width: 298px;
+    height: 297px;
+    right: -10px;
+    top: 17%;
+  }
+
   .paralax-bg {
-    height: 150vw;
+    height: 130vw;
   }
 
   .paralax-bg .cloud.second {
@@ -3779,6 +3790,16 @@ button {
   .way-slide__title {
     font-size: 22px;
     line-height: 110%;
+  }
+
+  .ornament-btn {
+    width: 160px;
+    height: 160px;
+    font-size: 12px;
+  }
+
+  .paralax-bg .rhombus-large {
+    top: 70px;
   }
 }
 
