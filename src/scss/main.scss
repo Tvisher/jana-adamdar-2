@@ -1150,6 +1150,7 @@ h6 {
     line-height: 100%;
     text-transform: uppercase;
     color: #462683;
+    white-space: pre-wrap;
   }
 
   .manifest-text,
@@ -2361,5 +2362,68 @@ h6 {
   .way-slide__title {
     font-size: 22px;
     line-height: 110%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .manifest .orange-title {
+    font-size: 54px;
+    margin-bottom: 40px;
+  }
+  .manifest .purple-title {
+    font-size: 32px;
+  }
+  .manifest .manifest-text,
+  .manifest li {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  [data-modal="manifest-modal"] .modal__content {
+    padding: 20px;
+    padding-top: 60px;
+    overflow: hidden;
+  }
+  .modal-romb {
+    display: none;
+  }
+  .manifest .purple-title {
+    font-size: 26px;
+  }
+  .manifest .orange-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 522px) {
+  .manifest .orange-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .manifest .purple-title {
+    font-size: 22px;
+  }
+  .manifest .orange-title.small {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 460px) {
+  .manifest .orange-title {
+    font-size: 32px;
+  }
+  .manifest .manifest-text,
+  .manifest li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .manifest .purple-title,
+  .manifest .orange-title.small {
+    font-size: 18px;
+  }
+  .manifest .purple-title {
+    padding-top: 10px;
+    margin-bottom: 10px;
   }
 }
