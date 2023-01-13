@@ -99,32 +99,38 @@
             <img data-rellax-speed="3" class="paralax-elem stars" src="@img/stars_2.png" alt="">
             <img data-rellax-speed="4" class="paralax-elem stars" src="@img/stars_3.png" alt="">
             <img data-rellax-speed="0" data-rellax-desktop-speed="-1" class="paralax-elem cloud" src="@img/clouds-1.png" alt="">
-            <img data-rellax-speed="1" data-rellax-desktop-speed="2" class="paralax-elem cloud second" src="@img/clouds-2.png" alt="">
-            <img data-rellax-speed="5" class="paralax-elem rhombus-large" src="@img/rhombus-large.png" alt="">
+            <div class="cloud second" data-aos="fade-up" data-aos-delay="200">
+                <img data-rellax-speed="1" data-rellax-desktop-speed="2" class="paralax-elem" src="@img/clouds-2.png" alt="">
+            </div>
+            <div class="rhombus-large" data-aos="fade-up" data-aos-delay="400">
+                <img data-rellax-speed="5" class="paralax-elem " src="@img/rhombus-large.png" alt="">
+            </div>
 
-            <picture>
-                <source srcset="@img/rhombus-smalls-mobile.png" media="(max-width: 490px)" />
-                <img data-rellax-speed="6" class="paralax-elem rhombus-smalls" src="@img/rhombus-smalls.png" alt="">
-            </picture>
+            <div class="rhombus-smalls" data-aos="fade-up" data-aos-delay="600">
+                <picture>
+                    <source srcset="@img/rhombus-smalls-mobile.png" media="(max-width: 490px)" />
+                    <img data-rellax-speed="6" class="paralax-elem " src="@img/rhombus-smalls.png" alt="">
+                </picture>
+            </div>
         </div>
 
         <main>
             <section class="main-screen">
                 <div class="container">
                     <div class="title-wrapper" data-rellax-speed="2">
-                        <h1 class="main-title"> ДЕЛО<br>ВО МНЕ</h1>
-                        <button class="ornament-btn">узнать</button>
+                        <h1 class="main-title" data-aos="fade-up"> ДЕЛО<br>ВО МНЕ</h1>
+                        <button class=" ornament-btn" data-aos="fade-up" data-aos-delay="400">узнать</button>
                     </div>
                 </div>
             </section>
             <section class="second-screen">
                 <div class="container">
-                    <h2 class="orange-title">Я и есть</h2>
+                    <h2 class="orange-title" data-aos="fade-in">Я и есть</h2>
                     <div class="smear-block">
                         <img class="smear-img" src="@img/smear.gif" alt="">
                         <div class="selectet-tag">НОВЫЙ КАЗАХСТАН</div>
                     </div>
-                    <div class="second-screen__descr">
+                    <div class="second-screen__descr" data-aos="fade-in">
                         <span class="tag-descr" data-descr="1">это то, что создают, а не то, под что подстраиваются и ждут.</span>
                         <span class="tag-descr" data-descr="2">результат осознанного принятия ответственности за все, что происходит в нашей стране, каждым ее жителем.</span>
                         <span class="tag-descr" data-descr="3">наше персональное место сбора лидеров НОВОГО КАЗАХСТАНА.</span>
@@ -136,7 +142,7 @@
                         <span class="tag-descr" data-descr="9">иначе думающие люди, готовые прийти на смену старой элите – элите должностей, родственных связей, денег и контроля.</span>
                     </div>
                 </div>
-                <div class="marquee__wrapper unselectable">
+                <div class="marquee__wrapper unselectable" data-aos="fade-in">
                     <div id="marquee">
                         <div class="marquee__el" data-tag="1">РЕАЛЬНОСТЬ</div>
                         <div class="marquee__el" data-tag="2">СВОБОДА</div>
@@ -160,26 +166,26 @@
                 </div>
             </section>
             <section class="hello-section" id="hello-section">
-                <div class="flying-el" data-el="1">
+                <div class="flying-el" data-el="1" data-aos="fade-up">
                     <img src="@img/flying-el-1.svg" alt="">
                 </div>
-                <div class="flying-el" data-el="2">
+                <div class="flying-el" data-el="2" data-aos="fade-up">
                     <img src="@img/flying-el-2.svg" alt="">
                 </div>
-                <div class="flying-el" data-el="3">
+                <div class="flying-el" data-el="3" data-aos="fade-up">
                     <img src="@img/flying-el-3.svg" alt="">
                 </div>
                 <div class="container small-container">
-                    <h2 class="orange-title">Привет,<br> Казахстан!</h2>
-                    <div class="video-block__wrapper">
+                    <h2 class="orange-title" data-aos="fade-in">Привет,<br> Казахстан!</h2>
+                    <div class="video-block__wrapper" data-aos="fade-in">
                         <iframe class="video-block" width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div class="video-block__descr">Привет! Я — Асель Баденова, лидер Движения «Новые люди».</div>
-                    <h3 class="blue-title">
+                    <div class="video-block__descr" data-aos="fade-in">Привет! Я — Асель Баденова, лидер Движения «Новые люди».</div>
+                    <h3 class="blue-title" data-aos="fade-in">
                         Как построить новый,<br> справедливый<br>Казахстан?
                     </h3>
                     <div class="hello-section__content">
-                        <div class="content__text-block">
+                        <div class="content__text-block" data-aos="fade-in" data-aos-delay="500">
                             <p> Президент говорит, что нужно перезагрузить всю систему общественных и индивидуальных ценностей, в центре которых будут трудолюбие, культ знаний, прагматизм и предприимчивость.</p>
                             <p> Но что многие из нас слышали только родившись? «Отойди, я сама сделаю!», «Не трогай, сломаешь!», «Сначала надо спросить!», «Дай я помогу»…</p>
                             <p> Из самых лучших побуждений нас просят не рисковать, ограждают от ошибок, отучают от самостоятельности и заставляют на все просить разрешения. Нас буквально учат оглядываться в поисках того, «кто знает лучше», «кто поможет», «кто сделает» и кто даст разрешение.</p>
@@ -187,15 +193,15 @@
                             <p> Сотни тысяч, может быть, даже миллионы людей в возрасте от 20 до 70 лет оглядываются в поисках того, кто им поможет.</p>
                             <p> Поможет студенту, чтобы он ни о чем не задумывался, а просто учился. Поможет взрослым мужчинам, чтобы они спокойно выбирали в интернете объявления с предложением работы и зарплатой в миллион тенге. Поможет начинающим бизнесменам и даже госпредприятиям.</p>
                         </div>
-                        <div class="content__image-block">
+                        <div class="content__image-block" data-aos="fade-in">
                             <img src="@img/content-img-1.png" alt="">
                         </div>
                     </div>
                     <div class="hello-section__content second">
-                        <div class="content__image-block">
+                        <div class="content__image-block" data-aos="fade-in">
                             <img src="@img/content-img-2.png" alt="">
                         </div>
-                        <div class="content__text-block">
+                        <div class="content__text-block" data-aos="fade-in" data-aos-delay="500">
                             <p> Но кто создаст взрослым мужчинам рабочие места с зарплатой в миллион тенге, если тот, кто может их создать, сам ходит в поисках таких объявлений?</p>
                             <p> Кто накопит студентам повышенные стипендии, если те, кто должен сдавать в госбюджет, ждут подарков из него?</p>
                             <p> Кто должен брать на себя ответственность и создавать Новый Казахстан? Где тот всеведущий всевластный человек, который всем разрешит, поможет и прикажет?</p>
@@ -207,20 +213,20 @@
                             <p>Хочешь к нам? Читай <a class=selection-link href="#">манифест</a>, регистрируйся, проходи конкурсный отбор и добро пожаловать в команду.</p>
                         </div>
                     </div>
-                    <div class="ornament-btn__wrapper"> <button class="ornament-btn _blue">участвовать</button></div>
+                    <div class="ornament-btn__wrapper" data-aos="zoom-in"> <button class="ornament-btn _blue">участвовать</button></div>
 
                 </div>
             </section>
 
             <section class="way" id="way-section">
                 <div class="container small-container">
-                    <h2 class="orange-title">Путь лидера</h2>
-                    <div class="bot-section__descr">
+                    <h2 class="orange-title" data-aos="fade-in">Путь лидера</h2>
+                    <div class="bot-section__descr" data-aos="fade-in">
                         Как стать лидером «Нового Казахстана»?<br>
                         7 шагов в Движении на пути к успеху
                     </div>
                 </div>
-                <div class="container small-container">
+                <div class="container small-container" data-aos="fade-in">
 
                     <div class="way-slider swiper-slider">
                         <div class="way-slider__btns">
@@ -345,47 +351,49 @@
                 </div>
             </section>
             <section class="bot-section" id="bot-section">
-                <div class="flying-el" data-el="5">
+                <div class="flying-el" data-el="5" data-aos="fade-in">
                     <img src="@img/flying-el-5.svg" alt="">
                 </div>
                 <div class="container small-container">
-                    <h2 class="orange-title">Будь<br> в Движении</h2>
-                    <div class="bot-section__descr">
+                    <h2 class="orange-title" data-aos="fade-in">Будь<br> в Движении</h2>
+                    <div class="bot-section__descr" data-aos="fade-in">
                         Готов войти в команду «Новых людей»?<br>
                         Тогда приступай к конкурсу
                     </div>
                     <div class="bot-section__content">
-                        <div class="bot-section__img">
+                        <div class="bot-section__img" data-aos="fade-in">
                             <picture>
                                 <source srcset="@img/bot-img-mob.png" media="(max-width: 991px)" />
                                 <img src="@img/bot-img.png" alt="">
                             </picture>
                         </div>
-                        <div class="bot-section__text">
+                        <div class="bot-section__text" data-aos="fade-in">
                             <span>Для удобства конкурс проводится в телеграм-боте. Он введёт тебя в курс дела, объяснит задание и даже вдохновит успешными примерами.</span>
                             <span>В дальнейшем все наше общение будет происходить в этом мессенджере. Поэтому если ещё не установил приложение, то уже пора.</span>
                             <span>Возникнут проблемы в процессе? Не переживай и смело вызывай в боте модератора. Мы не бросим тебя в беде.</span>
                             <span>Удачи и добро пожаловать!</span>
-                            <a href="#" class="styles-btn">
-                                Запустить телеграм-бота
-                                <div class="styles-btn__line"></div>
-                            </a>
+                            <span data-aos="fade-in">
+                                <a href="#" class="styles-btn">
+                                    Запустить телеграм-бота
+                                    <div class="styles-btn__line"></div>
+                                </a>
+                                </spa>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="faq-section" id="faq-section">
-                <div class="flying-el" data-el="6">
+                <div class="flying-el" data-el="6" data-aos="fade-in">
                     <img src="@img/flying-el-6.svg" alt="">
                 </div>
-                <div class="flying-el" data-el="7">
+                <div class="flying-el" data-el="7" data-aos="fade-in">
                     <img src="@img/flying-el-7.svg" alt="">
                 </div>
                 <div class="faq-section__content">
                     <div class="container small-container">
-                        <h2 class="orange-title">Вопросы<br> и ответы</h2>
+                        <h2 class="orange-title" data-aos="fade-in">Вопросы<br> и ответы</h2>
                         <ul class="faq__list">
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Кто руководит Движением?</div>
                                     <div class="item__body" data-toggle-content>
@@ -393,8 +401,7 @@
                                     </div>
                                 </div>
                             </li>
-
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Откуда деньги на такой крупный проект?</div>
                                     <div class="item__body" data-toggle-content>
@@ -402,7 +409,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Почему именно 5000 человек?</div>
                                     <div class="item__body" data-toggle-content>
@@ -410,7 +417,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Кто такая «Новая элита»?</div>
                                     <div class="item__body" data-toggle-content>
@@ -418,7 +425,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Вы поддерживаете Президента Токаева?</div>
                                     <div class="item__body" data-toggle-content>
@@ -426,7 +433,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Нужно ли мне платить при вступлении в ваше движение?</div>
                                     <div class="item__body" data-toggle-content>
@@ -434,7 +441,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Мне дадут грант на мой проект?</div>
                                     <div class="item__body" data-toggle-content>
@@ -442,7 +449,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Какую конкретно работу нужно отправить на конкурс?</div>
                                     <div class="item__body" data-toggle-content>
@@ -450,7 +457,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Кто судит конкурс? Будут ли призы за первое место?</div>
                                     <div class="item__body" data-toggle-content>
@@ -458,7 +465,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Что такое Кампусы?</div>
                                     <div class="item__body" data-toggle-content>
@@ -466,7 +473,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>В каких городах будут Кампусы Движения?</div>
                                     <div class="item__body" data-toggle-content>
@@ -474,7 +481,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Чему Вы будете обучать участников Движения?</div>
                                     <div class="item__body" data-toggle-content>
@@ -482,7 +489,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Сколько времени нужно будет уделять Движению?</div>
                                     <div class="item__body" data-toggle-content>
@@ -490,8 +497,7 @@
                                     </div>
                                 </div>
                             </li>
-
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Вы поможете мне стать крупным чиновником или депутатом?</div>
                                     <div class="item__body" data-toggle-content>
@@ -499,7 +505,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="faq__item">
+                            <li class="faq__item" data-aos="fade-in">
                                 <div class="faq__item-wrap">
                                     <div class="item__head" data-toggle-elem>Вы планируете заниматься политикой?</div>
                                     <div class="item__body" data-toggle-content>
@@ -515,11 +521,11 @@
         <footer class="footer">
             <div class="container small-container">
                 <div class="footer__wrapper">
-                    <a href="#" class="footer__logo">
+                    <a href="#" class="footer__logo" data-aos="fade-in">
                         <img src="@img/logo-yellow.svg" alt="za">
                     </a>
                     <div class="footer__data">
-                        <div class="footer__socials">
+                        <div class="footer__socials" data-aos="fade-in">
                             <a href="#" title="telegram" class="social">
                                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z" fill="url(#paint0_linear_233_9940)" />
@@ -571,7 +577,7 @@
 
                             </a>
                         </div>
-                        <div class="footer__contacts">
+                        <div class="footer__contacts" data-aos="fade-in">
                             <div class="contacts__block">
                                 <div class="ico"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="20" cy="20" r="20" fill="#462683" />
@@ -591,7 +597,7 @@
                                 <a href="mailto:info@newpeople.kz">info@newpeople.kz</a>
                             </div>
                         </div>
-                        <div class="footer__links">
+                        <div class="footer__links" data-aos="fade-in">
                             <a href="#" data-modal-open="initiators-modal">Инициаторы</a>
                             <a href="#">Политика конфиденциальности</a>
                         </div>

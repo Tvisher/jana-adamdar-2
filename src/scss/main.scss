@@ -327,11 +327,19 @@ h6 {
     &.second {
       bottom: -20px;
     }
+    img {
+      width: 100%;
+    }
   }
   .rhombus-large {
     position: absolute;
     left: 0;
     top: 400px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   .rhombus-smalls {
@@ -344,6 +352,11 @@ h6 {
     }
     @media (max-width: 1360px) {
       right: 5%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
@@ -2232,6 +2245,7 @@ h6 {
     }
   }
   .faq__item .item__head {
+    padding-right: 40px;
     font-size: 24px;
   }
 
@@ -2290,7 +2304,7 @@ h6 {
     padding-top: 50%;
   }
   .paralax-bg {
-    height: 140vw;
+    height: 139vw;
   }
   .modal {
     padding: 0;
