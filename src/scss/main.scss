@@ -1690,6 +1690,10 @@ h6 {
 }
 
 @media (max-width: 993px) {
+  .modal__content .modal-close-btn {
+    top: 15px;
+    right: 15px;
+  }
   .modal__content {
     padding: 50px 50px;
   }
@@ -2354,6 +2358,9 @@ h6 {
   }
 }
 @media (max-width: 390px) {
+  .btns-block .styles-btn {
+    max-width: 90vw;
+  }
   .paralax-bg .rhombus-smalls {
     width: 298px;
     height: 297px;
