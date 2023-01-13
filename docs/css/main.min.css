@@ -2616,7 +2616,7 @@ button {
 
 .way-slider {
   margin-top: 50px;
-  transform: rotate(-7deg);
+  transform: rotate(-7deg) translateZ(0);
   cursor: ew-resize;
 }
 
@@ -2625,12 +2625,13 @@ button {
 }
 
 .way-slide {
+  will-change: transform;
   max-width: 660px;
   width: 100%;
   display: flex;
   gap: 40px;
   transition: transform 0.25s ease-in-out;
-  transform: rotate(7deg) !important;
+  transform: rotate(7deg) translateZ(0) !important;
 }
 
 .way-slide.btns-slide {

@@ -1419,19 +1419,20 @@ h6 {
 
 .way-slider {
   margin-top: 50px;
-  transform: rotate(-7deg);
+  transform: rotate(-7deg) translateZ(0);
   cursor: ew-resize;
 }
 .way-slider__btns {
   display: none;
 }
 .way-slide {
+  will-change: transform;
   max-width: 660px;
   width: 100%;
   display: flex;
   gap: 40px;
   transition: transform 0.25s ease-in-out;
-  transform: rotate(7deg) !important;
+  transform: rotate(7deg) translateZ(0) !important;
   &.btns-slide {
     padding-left: 40px;
     flex-direction: column;
