@@ -1169,6 +1169,22 @@ body.load:before {
   visibility: hidden;
 }
 
+[data-selected-lang=ru] .ru-v {
+  display: block;
+}
+
+[data-selected-lang=ru] .kz-v {
+  display: none;
+}
+
+[data-selected-lang=kz] .ru-v {
+  display: none;
+}
+
+[data-selected-lang=kz] .kz-v {
+  display: block;
+}
+
 .flying-header {
   opacity: 0;
   visibility: hidden;
@@ -1507,7 +1523,13 @@ button {
   flex-direction: column;
   width: fit-content;
   margin: auto;
+}
+
+.main-screen__wrapper {
   margin-bottom: 265px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 15vw;
 }
 
 .ornament-btn {
@@ -1560,6 +1582,7 @@ button {
 }
 
 .main-title {
+  color: #fff;
   font-family: "DrukCyr";
   font-style: normal;
   font-weight: 900;
@@ -3265,7 +3288,7 @@ button {
     height: 100%;
   }
 
-  .main-screen .title-wrapper {
+  .main-screen__wrapper {
     margin-bottom: 20vw;
   }
 
@@ -3412,6 +3435,8 @@ button {
     margin: auto;
     margin-top: 0;
     text-align: left;
+    margin-left: 0;
+    padding-left: 40px;
   }
 
   .mobile-menu {
@@ -3475,6 +3500,9 @@ button {
 
   .main-screen .title-wrapper {
     margin-left: 0;
+  }
+
+  .main-screen__wrapper {
     margin-bottom: 30vw;
   }
 
