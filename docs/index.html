@@ -151,22 +151,22 @@
             </div>
         </header>
         <div class="paralax-bg">
-            <img data-rellax-speed="2" class="paralax-elem stars" src="img/stars_1.png" alt="">
-            <img data-rellax-speed="3" class="paralax-elem stars" src="img/stars_2.png" alt="">
-            <img data-rellax-speed="4" class="paralax-elem stars" src="img/stars_3.png" alt="">
-            <img data-rellax-speed="0" data-rellax-desktop-speed="-1" class="paralax-elem cloud" src="img/clouds-1.png" alt="">
+            <img data-rellax-speed="2" class="paralax-elem stars" src="img/stars_1.svg" alt="">
+            <img data-rellax-speed="4" class="paralax-elem stars" src="img/stars_2.svg" alt="">
+            <img data-rellax-speed="6" class="paralax-elem stars" src="img/stars_3.svg" alt="">
+            <img data-rellax-speed="0" data-rellax-desktop-speed="-1" class="paralax-elem cloud" src="img/clouds-1.svg" alt="">
             <div class="cloud second" data-aos="fade-up" data-aos-delay="200">
-                <img data-rellax-speed="1" data-rellax-desktop-speed="2" class="paralax-elem" src="img/clouds-2.png" alt="">
+                <img data-rellax-speed="1" data-rellax-desktop-speed="2" class="paralax-elem" src="img/clouds-2.svg" alt="">
             </div>
             <div class="rhombus-large" data-aos="fade-up" data-aos-delay="400">
-                <img data-rellax-speed="5" class="paralax-elem " src="img/rhombus-large.png" alt="">
+                <img data-rellax-speed="5" class="paralax-elem " src="img/rhombus-large.svg" alt="">
             </div>
 
             <div class="rhombus-smalls" data-aos="fade-up" data-aos-delay="600">
                 <picture>
-                    <source srcset="img/rhombus-smalls-mobile-390.png" media="(max-width: 390px)" />
-                    <source srcset="img/rhombus-smalls-mobile.png" media="(max-width: 490px)" />
-                    <img data-rellax-speed="6" class="paralax-elem " src="img/rhombus-smalls.png" alt="">
+                    <source srcset="img/rhombus-smalls-mobile-390.svg" media="(max-width: 390px)" />
+                    <source srcset="img/rhombus-smalls-mobile.svg" media="(max-width: 490px)" />
+                    <img data-rellax-speed="6" class="paralax-elem " src="img/rhombus-smalls.svg" alt="">
                 </picture>
             </div>
         </div>
@@ -183,6 +183,8 @@
                     <div class="main-screen__wrapper" data-rellax-speed="2">
                         <div data-aos="fade-up" data-aos-delay="400">
                             <button class=" ornament-btn">
+                                <div class="ornament-btn__bg">
+                                </div>
                                 <span class="ru-v"> узнать</span>
                                 <span class="kz-v"> Білу</span>
                             </button>
@@ -261,12 +263,12 @@
                             <p> Поможет студенту, чтобы он ни о чем не задумывался, а просто учился. Поможет взрослым мужчинам, чтобы они спокойно выбирали в интернете объявления с предложением работы и зарплатой в миллион тенге. Поможет начинающим бизнесменам и даже госпредприятиям.</p>
                         </div>
                         <div class="content__image-block" data-aos="fade-in">
-                            <img src="img/content-img-1.png" alt="">
+                            <img src="img/content-img-1.svg" alt="">
                         </div>
                     </div>
                     <div class="hello-section__content second">
                         <div class="content__image-block" data-aos="fade-in">
-                            <img src="img/content-img-2.png" alt="">
+                            <img src="img/content-img-2.svg" alt="">
                         </div>
                         <div class="content__text-block" data-aos="fade-in" data-aos-delay="500">
                             <p> Но кто создаст взрослым мужчинам рабочие места с зарплатой в миллион тенге, если тот, кто может их создать, сам ходит в поисках таких объявлений?</p>
@@ -281,7 +283,10 @@
                         </div>
                     </div>
                     <div class="ornament-btn__wrapper" data-aos="zoom-in">
-                        <button class="ornament-btn _blue">участвовать</button>
+                        <button class="ornament-btn _blue">
+                            <div class="ornament-btn__bg"></div>
+                            участвовать
+                        </button>
                     </div>
                 </div>
             </section>
@@ -431,8 +436,8 @@
                     <div class="bot-section__content">
                         <div class="bot-section__img" data-aos="fade-in">
                             <picture>
-                                <source srcset="img/bot-img-mob.png" media="(max-width: 1359px)" />
-                                <img src="img/bot-img.png" alt="">
+                                <source srcset="img/bot-img-mob.svg" media="(max-width: 1359px)" />
+                                <img src="img/bot-img.svg" alt="">
                             </picture>
                         </div>
                         <div class="bot-section__text" data-aos="fade-in">
@@ -830,6 +835,11 @@
     </div>
 
     <div class="modal" data-modal="manifest-modal">
+        <div class="modal-close-btn" onclick="this.closest('.show').classList.remove('show')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.5 11.9992L24 1.4999L22.5 0L12 10.4993L1.5 0L7.15257e-07 1.4999L10.5 11.9992L0 22.4985L1.5 23.9984L12 13.4991L22.5 23.9984L24 22.4985L13.5 11.9992Z" fill="black" />
+            </svg>
+        </div>
         <div class="modal__content" data-modal-content>
             <div class="modal-romb" data-modal-romb="1">
                 <img src="img/modal-romb-1.svg" alt="">
@@ -858,11 +868,7 @@
             <div class="modal-romb" data-modal-romb="9">
                 <img src="img/modal-romb-9.svg" alt="">
             </div>
-            <div class="modal-close-btn" onclick="this.closest('.show').classList.remove('show')">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.5 11.9992L24 1.4999L22.5 0L12 10.4993L1.5 0L7.15257e-07 1.4999L10.5 11.9992L0 22.4985L1.5 23.9984L12 13.4991L22.5 23.9984L24 22.4985L13.5 11.9992Z" fill="black" />
-                </svg>
-            </div>
+
             <div class="manifest">
                 <div class="orange-title">
                     Манифест движения «Новые люди»

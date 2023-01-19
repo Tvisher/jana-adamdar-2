@@ -45,6 +45,9 @@ const selectetTagInSmear = document.querySelector('.selectet-tag');
 const smearImg = document.querySelector('.smear-img');
 const marqueeWrapper = document.querySelector('.marquee__wrapper');
 
+
+var timeoutInterval;
+
 //Отработка кликов по документу
 document.body.addEventListener('click', (e) => {
     const target = e.target;
@@ -55,6 +58,12 @@ document.body.addEventListener('click', (e) => {
     }
     // Логика тегов 
     if (target.closest('[data-tag]')) {
+        clearInterval(intervalChangeFnc);
+        if (timeoutInterval) {
+            clearInterval(timeoutInterval);
+        }
+        timeoutInterval = setTimeout(() => { intervalChangeFnc = setInterval(() => indervalChange(), 5000); }, 30000)
+
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
         const selectedTagId = selectedTag.dataset.tag;
@@ -70,7 +79,6 @@ document.body.addEventListener('click', (e) => {
             tag.classList.add('active');
         });
 
-
         selectetTagInSmear.innerHTML = selectedTag.innerText;
         smearImg.src = smearImg.src;
         setTimeout(() => {
@@ -78,6 +86,7 @@ document.body.addEventListener('click', (e) => {
         }, 800);
         return;
     }
+
     // Откытие модальных окон
     if (target.closest('[data-modal-open]')) {
         e.preventDefault();
@@ -111,6 +120,42 @@ document.body.addEventListener('click', (e) => {
         return;
     }
 });
+
+
+
+
+
+
+function indervalChange() {
+    const activeTags = document.querySelectorAll('.marquee__el.active');
+    var nextTagNum;
+    var innerText = ''
+    activeTags.forEach(tag => {
+        const tagNum = tag.dataset.tag;
+        nextTagNum = +tagNum + 1;
+        if (nextTagNum === 10) {
+            nextTagNum = 1;
+        }
+        tag.classList.remove('active');
+        innerText = document.querySelector(`[data-tag="${nextTagNum}"].marquee__el`).innerText;
+
+    });
+    document.querySelectorAll(`[data-tag="${nextTagNum}"].marquee__el`).forEach(tag => { tag.classList.add('active'); });
+
+    document.querySelectorAll('.tag-descr.active')?.forEach(tag => tag.classList.remove('active'));
+    const selectedDescr = document.querySelectorAll(`[data-descr = '${nextTagNum}']`);
+    selectedDescr.forEach(tag => {
+        tag.classList.add('active');
+    });
+
+    selectetTagInSmear.innerHTML = innerText;
+    smearImg.src = smearImg.src;
+}
+
+var intervalChangeFnc = setInterval(() => indervalChange(), 5000);
+
+
+
 
 // Маска на номера телефона
 document.querySelectorAll('input[type="tel"]').forEach(input => {
@@ -169,4 +214,19 @@ const waySlider = new Swiper('.way-slider', {
 });
 
 
+
+// Ховер на круглые кнопки 
+let rotationSpeed = 0.45;
+document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
+    let counter = 0;
+    let animationRotate;
+    function rotate() {
+        counter = counter + rotationSpeed;
+        btn.style.transform = `rotate(${counter}deg)`;
+        animationRotate = requestAnimationFrame(rotate);
+    }
+    requestAnimationFrame(rotate);
+    btn.addEventListener('mouseenter', (e) => { rotationSpeed = 0.25; });
+    btn.addEventListener('mouseleave', (e) => { rotationSpeed = 0.45; });
+});
 

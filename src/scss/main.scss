@@ -167,19 +167,22 @@ h6 {
 }
 
 .styles-btn {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   &:hover {
     .styles-btn__line {
-      animation: lineAnimation 0.25s ease-in-out;
+      width: 100%;
     }
   }
   .styles-btn__line {
     margin: 0 !important;
     position: absolute;
-    right: 0;
-    bottom: -3px;
+    left: 0;
+    bottom: 0px;
     height: 3px;
     width: 0%;
-    background-color: #fff;
+    background-color: #462683;
     border-radius: 3px;
     transition: width 0.25s ease-in-out;
   }
@@ -194,7 +197,7 @@ h6 {
   display: flex;
   text-align: center;
   border: 1px solid #462683;
-  border-width: 1px 1px 4px 1px;
+  // border-width: 1px 1px 4px 1px;
   width: fit-content;
   text-decoration: none;
   font-weight: 900;
@@ -403,10 +406,15 @@ h6 {
   padding-right: 15vw;
 }
 .ornament-btn {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   &:hover {
     transform: scale(1.1);
   }
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.35s ease-in-out;
+  border-radius: 50%;
+  overflow: hidden;
   margin-left: auto;
   margin-top: 30px;
   width: 280px;
@@ -419,9 +427,9 @@ h6 {
   text-transform: uppercase;
   color: #fab748;
   position: relative;
-  &:before {
-    content: "";
-    background-image: url("../img/ornament-yellow.png");
+  .ornament-btn__bg {
+    will-change: transform;
+    background-image: url("../img/ornament-yellow.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -430,13 +438,12 @@ h6 {
     top: 0;
     width: 100%;
     height: 100%;
-    animation: rotate 14s linear infinite 0s;
   }
   &._blue {
     margin: auto;
     color: #462683;
-    &:before {
-      background-image: url("../img/ornament-blue.png");
+    .ornament-btn__bg {
+      background-image: url("../img/ornament-blue.svg");
     }
   }
 }
@@ -568,11 +575,11 @@ h6 {
   background: #fab748;
 }
 .marquee__el {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   padding: 22px 0;
   cursor: pointer;
-  &:hover {
-    color: #fff;
-  }
   &.active {
     color: #fff;
   }
@@ -786,6 +793,9 @@ h6 {
 
 .faq__item {
   position: relative;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   &::after,
   &::before {
     width: 0%;
@@ -1062,11 +1072,11 @@ h6 {
       content: "";
       position: absolute;
       left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      width: 106%;
+      height: 106%;
       border-radius: 50%;
-      transform: translateX(-12px);
+      transform: translate(-12px, -50%);
     }
   }
   &.purple {
@@ -1090,6 +1100,7 @@ h6 {
   }
 
   .initiator__name {
+    text-transform: uppercase;
     font-family: "DrukCyr";
     font-style: normal;
     font-weight: 900;
@@ -1122,6 +1133,16 @@ h6 {
     max-width: initial;
     background-image: none;
     padding: 120px 0;
+  }
+  .modal-close-btn {
+    z-index: 10;
+    right: 30px;
+    top: 30px;
+    width: 24px;
+    height: 24px;
+    position: sticky;
+    margin-left: auto;
+    cursor: pointer;
   }
 }
 .manifest {

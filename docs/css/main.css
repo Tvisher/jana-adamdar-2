@@ -1291,6 +1291,9 @@ button {
 }
 
 .styles-btn {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   transition: transform 0.25s ease-in-out;
   justify-content: center;
   background-color: #fff;
@@ -1299,7 +1302,6 @@ button {
   display: flex;
   text-align: center;
   border: 1px solid #462683;
-  border-width: 1px 1px 4px 1px;
   width: fit-content;
   text-decoration: none;
   font-weight: 900;
@@ -1312,17 +1314,17 @@ button {
 }
 
 .styles-btn:hover .styles-btn__line {
-  animation: lineAnimation 0.25s ease-in-out;
+  width: 100%;
 }
 
 .styles-btn .styles-btn__line {
   margin: 0 !important;
   position: absolute;
-  right: 0;
-  bottom: -3px;
+  left: 0;
+  bottom: 0px;
   height: 3px;
   width: 0%;
-  background-color: #fff;
+  background-color: #462683;
   border-radius: 3px;
   transition: width 0.25s ease-in-out;
 }
@@ -1533,7 +1535,12 @@ button {
 }
 
 .ornament-btn {
-  transition: transform 0.3s ease-in-out;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+  transition: transform 0.35s ease-in-out;
+  border-radius: 50%;
+  overflow: hidden;
   margin-left: auto;
   margin-top: 30px;
   width: 280px;
@@ -1552,9 +1559,9 @@ button {
   transform: scale(1.1);
 }
 
-.ornament-btn:before {
-  content: "";
-  background-image: url("../img/ornament-yellow.png");
+.ornament-btn .ornament-btn__bg {
+  will-change: transform;
+  background-image: url("../img/ornament-yellow.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1563,7 +1570,6 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  animation: rotate 14s linear infinite 0s;
 }
 
 .ornament-btn._blue {
@@ -1571,8 +1577,8 @@ button {
   color: #462683;
 }
 
-.ornament-btn._blue:before {
-  background-image: url("../img/ornament-blue.png");
+.ornament-btn._blue .ornament-btn__bg {
+  background-image: url("../img/ornament-blue.svg");
 }
 
 @keyframes rotate {
@@ -1709,6 +1715,9 @@ button {
 }
 
 .marquee__el {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
   padding: 22px 0;
   cursor: pointer;
   transition: color 0.25s ease-in-out;
@@ -1722,10 +1731,6 @@ button {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
-.marquee__el:hover {
-  color: #fff;
 }
 
 .marquee__el.active {
@@ -1948,6 +1953,9 @@ button {
 
 .faq__item {
   position: relative;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
 }
 
 .faq__item::after,
@@ -2246,11 +2254,11 @@ button {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  width: 106%;
+  height: 106%;
   border-radius: 50%;
-  transform: translateX(-12px);
+  transform: translate(-12px, -50%);
 }
 
 .initiator.purple .initiator__name {
@@ -2270,6 +2278,7 @@ button {
 }
 
 .initiator .initiator__name {
+  text-transform: uppercase;
   font-family: "DrukCyr";
   font-style: normal;
   font-weight: 900;
@@ -2304,6 +2313,17 @@ button {
   max-width: initial;
   background-image: none;
   padding: 120px 0;
+}
+
+[data-modal=manifest-modal] .modal-close-btn {
+  z-index: 10;
+  right: 30px;
+  top: 30px;
+  width: 24px;
+  height: 24px;
+  position: sticky;
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .manifest .orange-title {
