@@ -230,3 +230,22 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
     btn.addEventListener('mouseleave', (e) => { rotationSpeed = 0.45; });
 });
 
+
+
+var animationData = fetch('../files/downloading.json', {})
+    .then(data => {
+        animationData = data;
+        var container = document.getElementById('svg-anim');
+        var params = {
+            container: container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: false,
+            animationData
+        };
+
+        var anim;
+        anim = bodymovin.loadAnimation(params);
+        anim.play()
+    });
+

@@ -746,6 +746,12 @@ h6 {
     }
   }
 }
+.bot-section__img {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
 .hidden-container {
   overflow: hidden;
   max-width: 100vw;
