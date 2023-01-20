@@ -1841,16 +1841,15 @@ button {
   margin-bottom: 15px;
 }
 
-.hello-section__content .content__image-block svg {
-  will-change: transform;
-  transform: scale(1.4) !important;
-  display: block;
+.hello-section__content .content__image-block {
+  flex-shrink: 0;
+  height: fit-content;
+  max-width: 500px;
   width: 100%;
-  height: 100%;
 }
 
-.hello-section__content .content__image-block svg * {
-  will-change: transform;
+.hello-section__content .content__image-block canvas {
+  object-fit: contain;
 }
 
 .hello-section__content.second .content__image-block svg {
@@ -1922,12 +1921,14 @@ button {
 
 .bot-section__img {
   position: relative;
+  max-width: 666px;
+  width: 100%;
+  height: fit-content;
 }
 
-.bot-section__img svg {
-  width: 100%;
-  height: 100%;
-  transform: translateX(-27%) !important;
+.bot-section__img canvas {
+  object-fit: contain;
+  transform: translateX(-27%);
 }
 
 .bot-section__img img {
@@ -2989,16 +2990,12 @@ button {
 }
 
 @media (max-width: 993px) {
-  .hello-section__content .content__image-block svg {
-    transform: scale(1) !important;
-  }
-
   .hello-section__content.second .content__image-block svg {
     transform: scale(1) !important;
   }
 
-  .bot-section__img svg {
-    transform: translateX(0) !important;
+  .bot-section__img canvas {
+    transform: translateX(0%);
   }
 
   .bot-section__img img {

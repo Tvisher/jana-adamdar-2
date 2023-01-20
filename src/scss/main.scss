@@ -690,18 +690,12 @@ h6 {
   }
 
   .content__image-block {
-    svg {
-      * {
-        will-change: transform;
-      }
-      will-change: transform;
-      transform: scale(1.4) !important;
-      display: block;
-      width: 100%;
-      height: 100%;
-      @media (max-width: 993px) {
-        transform: scale(1) !important;
-      }
+    flex-shrink: 0;
+    height: fit-content;
+    max-width: 500px;
+    width: 100%;
+    canvas {
+      object-fit: contain;
     }
   }
 }
@@ -776,12 +770,14 @@ h6 {
 }
 .bot-section__img {
   position: relative;
-  svg {
-    width: 100%;
-    height: 100%;
-    transform: translateX(-27%) !important;
+  max-width: 666px;
+  width: 100%;
+  height: fit-content;
+  canvas {
+    object-fit: contain;
+    transform: translateX(-27%);
     @media (max-width: 993px) {
-      transform: translateX(0) !important;
+      transform: translateX(0%);
     }
   }
   img {

@@ -253,7 +253,7 @@ function addAnimationImage(url, parent) {
             if (!container) return;
             const params = {
                 container: container,
-                renderer: 'svg',
+                renderer: 'canvas',
                 loop: true,
                 autoplay: false,
                 animationData: data
@@ -261,7 +261,14 @@ function addAnimationImage(url, parent) {
 
 
             const anim = bodymovin.loadAnimation(params);
-            anim.play()
+            window.addEventListener("scroll", (e) => {
+                let containerPosition = container.getBoundingClientRect().top - window.innerHeight;
+                if (containerPosition < 10) {
+                    anim.play()
+                } else {
+                    anim.pause()
+                }
+            });
         });
 }
 
