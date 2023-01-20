@@ -709,6 +709,9 @@ h6 {
   .content__image-block {
     svg {
       transform: scale(1.4) translateX(-10%) !important;
+      @media (max-width: 993px) {
+        transform: scale(1) !important;
+      }
     }
   }
 }
