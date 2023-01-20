@@ -232,20 +232,28 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 
 
-var animationData = fetch('../files/downloading.json', {})
-    .then(data => {
-        animationData = data;
-        var container = document.getElementById('svg-anim');
-        var params = {
-            container: container,
-            renderer: 'svg',
-            loop: true,
-            autoplay: false,
-            animationData
-        };
 
-        var anim;
-        anim = bodymovin.loadAnimation(params);
-        anim.play()
-    });
+function addAnimationImage(url, parent) {
+    let location = window.location;
+    fetch(`${location.protocol}//${location.host}${location.pathname}${location.hash}/${url}`, {})
+        .then(response => response.json())
+        .then(data => {
+            var container = document.querySelector(parent);
+            var params = {
+                container: container,
+                renderer: 'svg',
+                loop: true,
+                autoplay: false,
+                animationData: data
+            };
+
+            var anim;
+            anim = bodymovin.loadAnimation(params);
+            anim.play()
+        });
+}
+
+addAnimationImage('files/downloading.json', '#animated-svg-1');
+addAnimationImage('files/success.json', '#animated-svg-2');
+addAnimationImage('files/workflow.json', '#animated-svg-3');
 

@@ -1840,6 +1840,22 @@ button {
   margin-bottom: 15px;
 }
 
+.hello-section__content .content__image-block svg {
+  will-change: transform;
+  transform: scale(1.4) !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hello-section__content .content__image-block svg * {
+  will-change: transform;
+}
+
+.hello-section__content.second .content__image-block svg {
+  transform: scale(1.4) translateX(-10%) !important;
+}
+
 .selection-link {
   display: inline;
   color: #462683;
@@ -2957,6 +2973,10 @@ button {
 }
 
 @media (max-width: 993px) {
+  .hello-section__content .content__image-block svg {
+    transform: scale(1) !important;
+  }
+
   .modal__content .modal-close-btn {
     top: 15px;
     right: 15px;

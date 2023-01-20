@@ -687,6 +687,30 @@ h6 {
       margin-bottom: 15px;
     }
   }
+
+  .content__image-block {
+    svg {
+      * {
+        will-change: transform;
+      }
+      will-change: transform;
+      transform: scale(1.4) !important;
+      display: block;
+      width: 100%;
+      height: 100%;
+      @media (max-width: 993px) {
+        transform: scale(1) !important;
+      }
+    }
+  }
+}
+
+.hello-section__content.second {
+  .content__image-block {
+    svg {
+      transform: scale(1.4) translateX(-10%) !important;
+    }
+  }
 }
 
 .selection-link {
