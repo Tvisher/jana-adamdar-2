@@ -488,16 +488,18 @@ h6 {
 
 .smear-block {
   height: 0;
-  padding-top: 40%;
+  padding-top: 30%;
   position: relative;
   color: #ffffff;
   position: relative;
   .smear-img {
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
-    width: 100%;
+    width: auto;
     height: 100%;
+    object-fit: contain;
   }
   .selectet-tag {
     text-align: center;
@@ -523,11 +525,12 @@ h6 {
   color: #462683;
   max-width: 760px;
   margin: auto;
-  margin-bottom: 95px;
+  margin-top: -30px;
+  margin-bottom: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
+  min-height: 170px;
   .tag-descr {
     display: none;
     &.active {
