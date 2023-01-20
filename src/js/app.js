@@ -30,7 +30,7 @@ AOS.init({
     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 25, // offset (in px) from the original trigger point
+    offset: 35, // offset (in px) from the original trigger point
     delay: 100, // values from 0 to 3000, with step 50ms
     duration: 1200, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
@@ -221,20 +221,22 @@ const waySlider = new Swiper('.way-slider', {
 
 
 
-// Ховер на круглые кнопки 
-let rotationSpeed = 0.45;
+// Ховер на круглые кнопки
+let rotationSpeed = 0.5;
 document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
     let counter = 0;
-    let animationRotate;
+    var animationRotate;
+
     function rotate() {
-        counter = counter + rotationSpeed;
+        counter = (counter + rotationSpeed);
         btn.style.transform = `rotate(${counter}deg)`;
         animationRotate = requestAnimationFrame(rotate);
     }
     requestAnimationFrame(rotate);
     btn.addEventListener('mouseenter', (e) => { rotationSpeed = 0.25; });
-    btn.addEventListener('mouseleave', (e) => { rotationSpeed = 0.45; });
+    btn.addEventListener('mouseleave', (e) => { rotationSpeed = 0.5; });
 });
+
 
 
 
@@ -264,3 +266,25 @@ addAnimationImage('files/downloading.json', '#animated-svg-1');
 addAnimationImage('files/success.json', '#animated-svg-2');
 addAnimationImage('files/workflow.json', '#animated-svg-3');
 
+// SmoothScroll({
+//     // Время скролла 400 = 0.4 секунды
+//     animationTime: 300,
+//     // Размер шага в пикселях 
+//     stepSize: 75,
+//     // Ускорение 
+//     accelerationDelta: 100,
+//     // Максимальное ускорение
+//     accelerationMax: 2,
+
+//     // Поддержка клавиатуры
+//     keyboardSupport: true,
+//     // Шаг скролла стрелками на клавиатуре в пикселях
+//     arrowScroll: 50,
+//     // Pulse (less tweakable)
+//     // ratio of "tail" to "acceleration"
+//     pulseAlgorithm: true,
+//     pulseScale: 4,
+//     pulseNormalize: 1,
+//     // Поддержка тачпада
+//     touchpadSupport: true,
+// });

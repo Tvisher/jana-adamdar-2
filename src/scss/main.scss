@@ -429,6 +429,7 @@ h6 {
   position: relative;
   .ornament-btn__bg {
     will-change: transform;
+    transition: transform;
     background-image: url("../img/ornament-yellow.svg");
     background-repeat: no-repeat;
     background-position: center;
