@@ -243,7 +243,7 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 
 
-
+// Логика по инициализации анимированных json изображений 
 function addAnimationImage(url, parent) {
     let location = window.location;
     fetch(`${location.protocol}//${location.host}${location.pathname}${location.hash}/${url}`, {})
@@ -258,7 +258,6 @@ function addAnimationImage(url, parent) {
                 autoplay: false,
                 animationData: data
             };
-
 
             const anim = bodymovin.loadAnimation(params);
             window.addEventListener("scroll", (e) => {
