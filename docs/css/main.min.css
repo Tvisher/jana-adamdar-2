@@ -1919,9 +1919,24 @@ button {
   margin-bottom: 20px;
 }
 
+.bot-section__img {
+  position: relative;
+}
+
 .bot-section__img svg {
   width: 100%;
   height: 100%;
+  transform: translateX(-27%) !important;
+}
+
+.bot-section__img img {
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .hidden-container {
@@ -2979,6 +2994,14 @@ button {
 
   .hello-section__content.second .content__image-block svg {
     transform: scale(1) !important;
+  }
+
+  .bot-section__img svg {
+    transform: translateX(0) !important;
+  }
+
+  .bot-section__img img {
+    display: none;
   }
 
   .modal__content .modal-close-btn {

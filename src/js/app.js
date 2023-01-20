@@ -211,6 +211,12 @@ const waySlider = new Swiper('.way-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
+    // on: {
+    //     init: function () {
+    //         console.log('swiper initialized');
+    //     },
+    // }
 });
 
 
@@ -238,8 +244,9 @@ function addAnimationImage(url, parent) {
     fetch(`${location.protocol}//${location.host}${location.pathname}${location.hash}/${url}`, {})
         .then(response => response.json())
         .then(data => {
-            var container = document.querySelector(parent);
-            var params = {
+            const container = document.querySelector(parent);
+            if (!container) return;
+            const params = {
                 container: container,
                 renderer: 'svg',
                 loop: true,
@@ -247,8 +254,8 @@ function addAnimationImage(url, parent) {
                 animationData: data
             };
 
-            var anim;
-            anim = bodymovin.loadAnimation(params);
+
+            const anim = bodymovin.loadAnimation(params);
             anim.play()
         });
 }
