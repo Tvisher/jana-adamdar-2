@@ -691,9 +691,13 @@ h6 {
 
   .content__image-block {
     flex-shrink: 0;
-    height: fit-content;
+    height: 550px;
     max-width: 500px;
     width: 100%;
+
+    @media (max-width: 993px) {
+      height: fit-content;
+    }
     canvas {
       object-fit: contain;
     }
@@ -772,7 +776,10 @@ h6 {
   position: relative;
   max-width: 666px;
   width: 100%;
-  height: fit-content;
+  height: 520px;
+  @media (max-width: 993px) {
+    height: fit-content;
+  }
   canvas {
     object-fit: contain;
     transform: translateX(-27%);

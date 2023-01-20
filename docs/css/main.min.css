@@ -1843,7 +1843,7 @@ button {
 
 .hello-section__content .content__image-block {
   flex-shrink: 0;
-  height: fit-content;
+  height: 550px;
   max-width: 500px;
   width: 100%;
 }
@@ -1923,7 +1923,7 @@ button {
   position: relative;
   max-width: 666px;
   width: 100%;
-  height: fit-content;
+  height: 520px;
 }
 
 .bot-section__img canvas {
@@ -2990,8 +2990,16 @@ button {
 }
 
 @media (max-width: 993px) {
+  .hello-section__content .content__image-block {
+    height: fit-content;
+  }
+
   .hello-section__content.second .content__image-block svg {
     transform: scale(1) !important;
+  }
+
+  .bot-section__img {
+    height: fit-content;
   }
 
   .bot-section__img canvas {
