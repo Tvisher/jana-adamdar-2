@@ -229,6 +229,9 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
     function rotate() {
         counter = (counter + rotationSpeed);
+        if (counter >= 360) {
+            counter = 0;
+        }
         btn.style.transform = `rotate(${counter}deg)`;
         animationRotate = requestAnimationFrame(rotate);
     }
