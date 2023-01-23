@@ -87,6 +87,7 @@ document.body.addEventListener('click', (e) => {
         return;
     }
 
+
     // Откытие модальных окон
     if (target.closest('[data-modal-open]')) {
         e.preventDefault();
@@ -100,10 +101,7 @@ document.body.addEventListener('click', (e) => {
         target.closest('[data-modal].show').classList.remove('show');
         return;
     }
-    if (target.closest('[data-mobile-link]')) {
-        document.querySelector('[data-mobile-menu]').classList.remove('show');
-        return;
-    }
+
 
     if (target.closest('[data-lang]')) {
         e.preventDefault();
@@ -119,8 +117,26 @@ document.body.addEventListener('click', (e) => {
         document.body.setAttribute('data-selected-lang', langParam);
         return;
     }
-});
 
+
+    if (target.closest('[data-site-link]')) {
+        e.preventDefault();
+        var el = $(target.closest('[data-site-link]'));
+        console.log(el);
+        setTimeout(() => {
+            $('[data-mobile-menu].show').removeClass('show')
+        }, 500);
+        var dest = el.attr('href'); // получаем направление
+        if (dest !== undefined && dest !== '' && dest.length > 1) { // проверяем существование
+            $('html').animate({
+                scrollTop: $(dest).offset().top // прокручиваем страницу к требуемому элементу
+            }, 700 // скорость прокрутки
+            );
+        }
+        return false;
+    }
+
+});
 
 
 
@@ -245,8 +261,7 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 // Логика по инициализации анимированных json изображений 
 function addAnimationImage(url, parent) {
-    let location = window.location;
-    fetch(`${location.protocol}//${location.host}${location.pathname}${location.hash}/${url}`, {})
+    fetch(`./${url}`, {})
         .then(response => response.json())
         .then(data => {
             const container = document.querySelector(parent);

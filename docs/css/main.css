@@ -1124,7 +1124,6 @@ html {
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  scroll-behavior: smooth;
   line-height: 140%;
   font-size: 16px;
   color: #000;
@@ -1908,7 +1907,7 @@ button {
 }
 
 .bot-section__content .bot-section__text {
-  padding-top: 160px;
+  padding-top: 115px;
   font-family: "Circe";
   font-style: normal;
   font-size: 20px;
