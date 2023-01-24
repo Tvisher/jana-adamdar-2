@@ -63,7 +63,7 @@ document.body.addEventListener('click', (e) => {
         if (timeoutInterval) {
             clearInterval(timeoutInterval);
         }
-        timeoutInterval = setTimeout(() => { intervalChangeFnc = setInterval(() => intervalChange(), 5000); }, 30000)
+        timeoutInterval = setTimeout(() => { intervalChangeFnc = setInterval(() => intervalChange(), 7000); }, 30000)
 
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
@@ -169,7 +169,7 @@ function intervalChange() {
     smearImg.src = smearImg.src;
 }
 
-var intervalChangeFnc = setInterval(() => intervalChange(), 5000);
+var intervalChangeFnc = setInterval(() => intervalChange(), 7000);
 
 
 
