@@ -10,6 +10,8 @@ baseFunction.testWebP();
 
 
 window.addEventListener('load', () => {
+
+
     var rellax = new Rellax('[data-rellax-speed]', {
         breakpoints: [576, 768, 1180],
     });
@@ -17,7 +19,6 @@ window.addEventListener('load', () => {
         document.body.classList.add('load');
     }, 230);
 });
-
 // Инит и опции библиотеки анимаций
 AOS.init({
     // Global settings:
@@ -41,13 +42,13 @@ AOS.init({
 
 
 
+
 const selectetTagInSmear = document.querySelector('.selectet-tag');
 const smearImg = document.querySelector('.smear-img');
 const marqueeWrapper = document.querySelector('.marquee__wrapper');
 
 
 var timeoutInterval;
-
 //Отработка кликов по документу
 document.body.addEventListener('click', (e) => {
     const target = e.target;
@@ -62,7 +63,7 @@ document.body.addEventListener('click', (e) => {
         if (timeoutInterval) {
             clearInterval(timeoutInterval);
         }
-        timeoutInterval = setTimeout(() => { intervalChangeFnc = setInterval(() => indervalChange(), 5000); }, 30000)
+        timeoutInterval = setTimeout(() => { intervalChangeFnc = setInterval(() => intervalChange(), 5000); }, 30000)
 
         marqueeWrapper.classList.add('not-click');
         const selectedTag = target.closest('[data-tag]');
@@ -96,13 +97,14 @@ document.body.addEventListener('click', (e) => {
         selectedModal.classList.add('show');
         return;
     }
+
     // Закрытие модальных окон
     if (target.closest('[data-modal].show') && !target.closest('[data-modal-content]')) {
         target.closest('[data-modal].show').classList.remove('show');
         return;
     }
 
-
+    // Переключение языков
     if (target.closest('[data-lang]')) {
         e.preventDefault();
         const langItem = target.closest('[data-lang]');
@@ -118,7 +120,7 @@ document.body.addEventListener('click', (e) => {
         return;
     }
 
-
+    // Плавный скролл к секции
     if (target.closest('[data-site-link]')) {
         e.preventDefault();
         var el = $(target.closest('[data-site-link]'));
@@ -140,9 +142,8 @@ document.body.addEventListener('click', (e) => {
 
 
 
-
-
-function indervalChange() {
+// Интервальное переключение тегов в секции с бегущей строкой
+function intervalChange() {
     const activeTags = document.querySelectorAll('.marquee__el.active');
     var nextTagNum;
     var innerText = ''
@@ -168,7 +169,7 @@ function indervalChange() {
     smearImg.src = smearImg.src;
 }
 
-var intervalChangeFnc = setInterval(() => indervalChange(), 5000);
+var intervalChangeFnc = setInterval(() => intervalChange(), 5000);
 
 
 
@@ -227,12 +228,6 @@ const waySlider = new Swiper('.way-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
-    // on: {
-    //     init: function () {
-    //         console.log('swiper initialized');
-    //     },
-    // }
 });
 
 
@@ -258,10 +253,9 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 
 
-
 // Логика по инициализации анимированных json изображений 
 function addAnimationImage(url, parent) {
-    fetch(`./${url}`, {})
+    fetch(url, {})
         .then(response => response.json())
         .then(data => {
             const container = document.querySelector(parent);
@@ -286,6 +280,6 @@ function addAnimationImage(url, parent) {
         });
 }
 
-addAnimationImage('files/downloading.json', '#animated-svg-1');
-addAnimationImage('files/success.json', '#animated-svg-2');
-addAnimationImage('files/workflow.json', '#animated-svg-3');
+addAnimationImage('./files/downloading.json', '#animated-svg-1');
+addAnimationImage('./files/success.json', '#animated-svg-2');
+addAnimationImage('./files/workflow.json', '#animated-svg-3');
