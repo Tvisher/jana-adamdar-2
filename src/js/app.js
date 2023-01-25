@@ -255,29 +255,26 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 // Логика по инициализации анимированных json изображений 
 function addAnimationImage(url, parent) {
-    fetch(url, {})
-        .then(response => response.json())
-        .then(data => {
-            const container = document.querySelector(parent);
-            if (!container) return;
-            const params = {
-                container: container,
-                renderer: 'canvas',
-                loop: true,
-                autoplay: false,
-                animationData: data
-            };
 
-            const anim = bodymovin.loadAnimation(params);
-            window.addEventListener("scroll", (e) => {
-                let containerPosition = container.getBoundingClientRect().top - window.innerHeight;
-                if (containerPosition < 10) {
-                    anim.play()
-                } else {
-                    anim.pause()
-                }
-            });
-        });
+    const container = document.querySelector(parent);
+    if (!container) return;
+    const params = {
+        container: container,
+        renderer: 'canvas',
+        loop: true,
+        autoplay: false,
+        path: url
+    };
+
+    const anim = bodymovin.loadAnimation(params);
+    window.addEventListener("scroll", (e) => {
+        let containerPosition = container.getBoundingClientRect().top - window.innerHeight;
+        if (containerPosition < 10) {
+            anim.play()
+        } else {
+            anim.pause()
+        }
+    });
 }
 
 addAnimationImage('./files/downloading.json', '#animated-svg-1');
