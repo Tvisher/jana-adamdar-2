@@ -263,7 +263,7 @@ function addAnimationImage(url, parent) {
         renderer: 'canvas',
         loop: true,
         autoplay: false,
-        path: url
+        path: url,
     };
 
     const anim = bodymovin.loadAnimation(params);
