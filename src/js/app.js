@@ -188,7 +188,7 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
     const checkScroll = () => {
 
         const windowScroll = window.scrollY;
-        if (windowScroll > 350) {
+        if (windowScroll > (window.innerHeight - 100)) {
             flyingHeader.classList.add('fixed');
         } else {
             flyingHeader.classList.remove('fixed');

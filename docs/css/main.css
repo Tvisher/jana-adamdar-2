@@ -1496,15 +1496,28 @@ button {
 
 .paralax-bg .rhombus-smalls {
   position: absolute;
-  right: 22%;
-  top: 23%;
-  z-index: 2;
 }
 
-.paralax-bg .rhombus-smalls img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.paralax-bg .rhombus-smalls[data-romb="1"] {
+  right: 22%;
+  top: 260px;
+  width: 220px;
+  height: 220px;
+}
+
+.paralax-bg .rhombus-smalls[data-romb="2"] {
+  left: 48%;
+  top: 750px;
+  width: 120px;
+  height: 120px;
+  z-index: 3;
+}
+
+.paralax-bg .rhombus-smalls[data-romb="3"] {
+  left: 38%;
+  top: 460px;
+  width: 120px;
+  height: 120px;
 }
 
 .header {
@@ -2794,12 +2807,6 @@ button {
   display: none;
 }
 
-@media (max-width: 1450px) {
-  .paralax-bg .rhombus-smalls {
-    right: 12%;
-  }
-}
-
 @media (max-width: 1445px) {
   .faq-section .flying-el[data-el="6"] {
     transform: translateX(30%);
@@ -2814,13 +2821,33 @@ button {
   }
 }
 
-@media (max-width: 1360px) {
-  .paralax-bg .rhombus-smalls {
-    right: 5%;
+@media (max-width: 1441px) {
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    right: 14%;
+  }
+
+  .paralax-bg .rhombus-large {
+    left: -150px;
   }
 }
 
 @media (max-width: 1180px) {
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    top: 200px;
+    right: -2%;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="2"] {
+    left: 45%;
+    top: 580px;
+    z-index: 1;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="3"] {
+    left: 28%;
+    top: 460px;
+  }
+
   .way {
     padding-top: 110px;
   }
@@ -2831,11 +2858,6 @@ button {
 
   .main-title {
     font-size: 114px;
-  }
-
-  .paralax-bg .rhombus-smalls {
-    right: -31px;
-    top: 17%;
   }
 
   .paralax-bg {
@@ -3240,13 +3262,6 @@ button {
     height: 100vw;
   }
 
-  .paralax-bg .rhombus-smalls {
-    width: 500px;
-    height: 410px;
-    object-fit: contain;
-    right: 46px;
-  }
-
   .paralax-bg .rhombus-large {
     top: 200px;
     left: -200px;
@@ -3285,6 +3300,31 @@ button {
 }
 
 @media (max-width: 992px) {
+  .paralax-bg .rhombus-smalls[data-romb="3"] {
+    left: 34%;
+    top: 280px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="2"] {
+    left: 44%;
+    top: 500px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    top: 140px;
+    right: 15%;
+    width: 130px;
+    height: 130px;
+  }
+
+  .main-screen__wrapper {
+    padding-right: 22vw;
+  }
+
   [data-modal=manifest-modal] .modal__content {
     padding: 20px;
     padding-top: 60px;
@@ -3540,6 +3580,55 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  .paralax-bg .rhombus-smalls[data-romb="3"] {
+    left: 34%;
+    top: 240px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="2"] {
+    left: 40%;
+    top: 480px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    top: 140px;
+    right: 10%;
+  }
+
+  .main-screen__wrapper {
+    padding-right: 15vw;
+  }
+
+  .paralax-bg .rhombus-large {
+    top: 200px;
+    left: -300px;
+  }
+}
+
+@media (max-width: 680px) {
+  .paralax-bg .rhombus-smalls[data-romb="3"] {
+    left: 30%;
+    top: 240px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="2"] {
+    left: 38%;
+    top: 420px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    top: 140px;
+    right: 2%;
+    width: 110px;
+    height: 110px;
+  }
+}
+
 @media (max-width: 576px) {
   .way {
     padding-top: 80px;
@@ -3569,13 +3658,6 @@ button {
 
   .orange-title {
     font-size: 7.333vw;
-  }
-
-  .paralax-bg .rhombus-smalls {
-    width: 428px;
-    height: 346px;
-    right: 2%;
-    top: 25%;
   }
 
   .paralax-bg {
@@ -3646,11 +3728,6 @@ button {
 
   .paralax-bg {
     height: 130vw;
-  }
-
-  .paralax-bg .rhombus-smalls {
-    right: -15%;
-    top: 21%;
   }
 
   .paralax-bg .cloud.second {
@@ -3787,6 +3864,23 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  .paralax-bg .rhombus-smalls[data-romb="1"] {
+    top: 80px;
+    right: 0px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="3"] {
+    left: 15%;
+    top: 200px;
+  }
+
+  .paralax-bg .rhombus-smalls[data-romb="2"] {
+    left: 19%;
+    top: 380px;
+  }
+}
+
 @media (max-width: 460px) {
   .manifest .orange-title {
     font-size: 32px;
@@ -3860,13 +3954,6 @@ button {
 @media (max-width: 390px) {
   .btns-block .styles-btn {
     max-width: 90vw;
-  }
-
-  .paralax-bg .rhombus-smalls {
-    width: 298px;
-    height: 297px;
-    right: -10px;
-    top: 17%;
   }
 
   .paralax-bg {
