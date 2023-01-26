@@ -1858,7 +1858,7 @@ button {
 
 .hello-section__content .content__image-block {
   flex-shrink: 0;
-  height: 550px;
+  height: 500px;
   max-width: 500px;
   width: 100%;
 }
@@ -1868,7 +1868,7 @@ button {
 }
 
 .hello-section__content.second .content__image-block svg {
-  transform: scale(1.4) translateX(-10%) !important;
+  transform: scale(1.2) translateX(-10%) !important;
 }
 
 .selection-link {

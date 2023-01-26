@@ -254,16 +254,20 @@ document.querySelectorAll('.ornament-btn__bg').forEach(btn => {
 
 
 // Логика по инициализации анимированных json изображений 
-function addAnimationImage(url, parent) {
+function addAnimationImage(url, parent, type) {
 
     const container = document.querySelector(parent);
     if (!container) return;
     const params = {
         container: container,
-        renderer: 'canvas',
+        renderer: `${type}`,
         loop: true,
         autoplay: false,
         path: url,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice', // Supports the same options as the svg element's preserveAspectRatio property
+        }
+
     };
 
     const anim = bodymovin.loadAnimation(params);
@@ -277,6 +281,6 @@ function addAnimationImage(url, parent) {
     });
 }
 
-addAnimationImage('./files/downloading.json', '#animated-svg-1');
-addAnimationImage('./files/success.json', '#animated-svg-2');
-addAnimationImage('./files/workflow.json', '#animated-svg-3');
+addAnimationImage('./files/downloading.json', '#animated-svg-1', 'svg');
+addAnimationImage('./files/success.json', '#animated-svg-2', 'svg');
+addAnimationImage('./files/workflow.json', '#animated-svg-3', 'canvas');
