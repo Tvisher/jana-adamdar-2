@@ -917,11 +917,11 @@ h6 {
   @media (max-width: 993px) {
     height: fit-content;
   }
-  canvas {
+  svg {
     object-fit: contain;
-    transform: translateX(-27%);
+    transform: translateX(-27%) !important;
     @media (max-width: 993px) {
-      transform: translateX(0%);
+      transform: translateX(0%) !important;
     }
   }
   img {

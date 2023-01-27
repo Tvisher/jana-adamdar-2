@@ -283,4 +283,4 @@ function addAnimationImage(url, parent, type) {
 
 addAnimationImage('./files/downloading.json', '#animated-svg-1', 'svg');
 addAnimationImage('./files/success.json', '#animated-svg-2', 'svg');
-addAnimationImage('./files/workflow.json', '#animated-svg-3', 'canvas');
+addAnimationImage('./files/workflow.json', '#animated-svg-3', 'svg');

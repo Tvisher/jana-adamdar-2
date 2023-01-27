@@ -1941,9 +1941,9 @@ button {
   height: 520px;
 }
 
-.bot-section__img canvas {
+.bot-section__img svg {
   object-fit: contain;
-  transform: translateX(-27%);
+  transform: translateX(-27%) !important;
 }
 
 .bot-section__img img {
@@ -3026,8 +3026,8 @@ button {
     height: fit-content;
   }
 
-  .bot-section__img canvas {
-    transform: translateX(0%);
+  .bot-section__img svg {
+    transform: translateX(0%) !important;
   }
 
   .bot-section__img img {
